@@ -10,10 +10,4 @@ It showcases multiple features of Hiber Code-Kit:
 - Lights
 - Portals
 
-<iframe title="HiberWorld player"
-  src="https://hiber.hiberworld.com/?Launch.InitLevelID=1330565837996259&utm_source=embed&utm_medium=share&Platform.IsExternalEmbed=true"
-  frameborder="0" allowfullscreen
-  style="width: 800px; height: 450px"
-  sandbox="allow-same-origin allow-scripts allow-popups allow-modals allow-forms allow-pointer-lock allow-top-navigation"
-  tabindex="0"
-/>
+Check out the game here: https://hiberworld.com/world/4kYI07y3Z
