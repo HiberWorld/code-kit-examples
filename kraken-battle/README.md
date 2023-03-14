@@ -1,6 +1,6 @@
 # The Kraken Battle
 
-This is a game where the player has to defeat a Sea monster in a large storm.
+A game where the player has to defeat a Sea monster in a large storm.
 
 It showcases multiple features of Hiber Code-Kit:
 
