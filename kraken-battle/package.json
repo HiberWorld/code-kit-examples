@@ -1,0 +1,15 @@
+{
+  "name": "kraken-battle",
+  "version": "0.0.1",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "dev": "code-kit dev --open",
+    "upload": "code-kit upload"
+  },
+  "dependencies": {
+    "@hiberworld/code-kit": "latest",
+    "@hiberworld/code-kit-cli": "latest",
+    "@hiberworld/code-kit-utils": "latest"
+  }
+}
