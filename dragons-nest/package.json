@@ -1,0 +1,18 @@
+{
+  "name": "my-world",
+  "version": "0.0.1",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "dev": "vite --open",
+    "upload": "code-kit upload"
+  },
+  "dependencies": {
+    "@hiberworld/code-kit": "^3.5.0",
+    "@hiberworld/code-kit-cli": "^0.3.2",
+    "@hiberworld/code-kit-utils": "^2.2.0"
+  },
+  "devDependencies": {
+    "vite": "^4.0.4"
+  }
+}
