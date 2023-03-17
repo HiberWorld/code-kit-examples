@@ -1,4 +1,5 @@
 import {
+  BaseTransform,
   create,
   HNode,
   HNodeWithMethods,
@@ -7,7 +8,7 @@ import {
 } from "@hiberworld/code-kit";
 import { RandomSeed } from "@hiberworld/code-kit-utils";
 
-export type BrickProps = Transform & { rsd: RandomSeed };
+export type BrickProps = BaseTransform & { rsd: RandomSeed };
 export type BrickFactory = (transform: BrickProps) => HNodeWithMethods | void;
 
 export const missingBrick: BrickFactory = (transform: BrickProps) => {};
@@ -19,8 +20,18 @@ export const baseBrick: BrickFactory = (transform: BrickProps) => {
 
 export const simpleBrick: BrickFactory = (transform: BrickProps) => {
   const brick = baseBrick(transform);
+  return brick;
+};
 
-  brick!.add(create("gpl_spawn_point_01", { y: -0.1 }));
+export const spawnBrick: BrickFactory = (transform: BrickProps) => {
+  const brick = baseBrick(transform);
+
+  const spawn = create("gpl_spawn_point_01", {
+    y: 0.1,
+    colliderIsDisabled: { dummy: true },
+  });
+
+  brick!.add(spawn);
 
   return brick;
 };

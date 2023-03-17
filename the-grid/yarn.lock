@@ -345,14 +345,22 @@
   resolved "https://registry.yarnpkg.com/@hiberworld/code-kit-assets/-/code-kit-assets-1.0.8.tgz#ad2979f5e4f38eaa47b6f732fa3bcadb56f55421"
   integrity sha512-bTwNo17KT030bV8XsOvhc3rogcgm4zlBQOTVnTs2jGrX2C7UBX/+CJLmy8kbzOlBlwoBip5jyWvCihPr87L+1w==
 
-"@hiberworld/code-kit-cli@latest":
-  version "0.3.6"
-  resolved "https://registry.yarnpkg.com/@hiberworld/code-kit-cli/-/code-kit-cli-0.3.6.tgz#b973e44ab6db882a3b245a9c264652afb9bcc1b1"
-  integrity sha512-sGxY7U+C24QIuJIlJWJkJqNueahiVmQjqmihxO6yT09TjBR6rEGT3FkL70IELnVXck64SaLpqYG7+By9DeaP5Q==
+"@hiberworld/code-kit-cli@^0.4.1":
+  version "0.4.1"
+  resolved "https://registry.yarnpkg.com/@hiberworld/code-kit-cli/-/code-kit-cli-0.4.1.tgz#216ea1dcda4d7fb2a40d4f4d8f7b93b8f8ad0e66"
+  integrity sha512-Ch1O2kZTICIIzEOcfK3Loepg6yCPcwqbp0otWwn+5oxnyw2v7qTAp3gQ7ela+8JP0/OpPXici0I5m2P+Fmb4WA==
   dependencies:
     vite "^4.1.4"
 
-"@hiberworld/code-kit-utils@latest":
+"@hiberworld/code-kit-prefabs@^0.1.1":
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/@hiberworld/code-kit-prefabs/-/code-kit-prefabs-0.1.1.tgz#432fd1d26a1b31cf6951a166f7d6be1b5eafa6dd"
+  integrity sha512-SbXwdNbSWjAObz6ivuaPOY5GdYJfAMgbfhOVGU+QKYZF/DpcOa+mrvGJdwZ8IHjuSe3KzTBEgWrk5R61uIQ3Jg==
+  dependencies:
+    "@hiberworld/code-kit" "^3.11.1"
+    "@hiberworld/engine" "^1.22.7"
+
+"@hiberworld/code-kit-utils@^2.5.3":
   version "2.5.3"
   resolved "https://registry.yarnpkg.com/@hiberworld/code-kit-utils/-/code-kit-utils-2.5.3.tgz#b94fa6916d3dac612e08ee9fd5aae9212d13f3ce"
   integrity sha512-exD5Z40UfvraIkZVvO0EBi0gg/gsDD5Fcbz7RijWK7J6Udooq2iaXEwkX1GnJdK7Kj3IXCYOPcJH53rOSgAVLQ==
@@ -387,12 +395,26 @@
     gl-matrix "^3.4.3"
     nanoid "^4.0.1"
 
+"@hiberworld/code-kit@^3.12.2":
+  version "3.12.2"
+  resolved "https://registry.yarnpkg.com/@hiberworld/code-kit/-/code-kit-3.12.2.tgz#a41be68b3f9e3a08918750718939adf55b6cefeb"
+  integrity sha512-TZVeWv8Kc5Xgj7uZLOh5OvJ6giornABRaz0o7Iu2Wj2WL+/540kk/kwOTTghnr6x9TsZmzYzdPjZrwHfn0qLnQ==
+  dependencies:
+    "@changesets/cli" "^2.26.0"
+    "@hiberworld/code-kit-assets" "^1.0.7"
+    "@hiberworld/engine" "1.22.7"
+    "@types/clone-deep" "^4.0.1"
+    clone-deep "^4.0.1"
+    gl-matrix "^3.4.3"
+    nanoid "^4.0.1"
+    ts-xor "^1.1.0"
+
 "@hiberworld/engine@1.22.7":
   version "1.22.7"
   resolved "https://registry.yarnpkg.com/@hiberworld/engine/-/engine-1.22.7.tgz#1f539d9ae14e0d1ad325b8ba113d0db8043ef4dd"
   integrity sha512-XE2DcqK7zKQVoYdh6dG6KO9sfl7RBDQC1HXIoLXo7KSoPeqZyAeNBZsTxdDGkZex0JjYw/MvGgQyvHWvLE495A==
 
-"@hiberworld/engine@^1.24.0":
+"@hiberworld/engine@^1.22.7", "@hiberworld/engine@^1.24.0":
   version "1.24.0"
   resolved "https://registry.yarnpkg.com/@hiberworld/engine/-/engine-1.24.0.tgz#19c0b0fbc30df6364444863cc64e6af875380988"
   integrity sha512-ETTuKjJuQMAKB+06KN4D+IeSXcmR54oa+jrGyv69c+w8dz5A0Lz3M2iC8oZ3Met/ZWwSaqJ2ZxkyXRudJoeXXQ==
@@ -1946,6 +1968,11 @@ trim-newlines@^3.0.0:
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/trim-newlines/-/trim-newlines-3.0.1.tgz#260a5d962d8b752425b32f3a7db0dcacd176c144"
   integrity sha512-c1PTsA3tYrIsLGkJkzHF+w9F2EyxfXGo4UyJc4pFL++FMjnq0HJS69T3M7d//gKrFKwy429bouPescbjecU+Zw==
+
+ts-xor@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/ts-xor/-/ts-xor-1.1.0.tgz#dc579e04f1ebce219217cee18b0d2685b3b57a8d"
+  integrity sha512-9vtspo9gVrmJR0XQyuNySpr6DhZztCDWS8LT5CO4gSeifILDRi4e8QZ0ixnvCyob9hMYRaOeo+OyW3ovhngjuA==
 
 tty-table@^4.1.5:
   version "4.1.6"

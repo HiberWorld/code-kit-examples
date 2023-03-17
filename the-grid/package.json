@@ -8,8 +8,9 @@
     "upload": "code-kit upload"
   },
   "dependencies": {
-    "@hiberworld/code-kit": "^3.11.1",
-    "@hiberworld/code-kit-cli": "latest",
-    "@hiberworld/code-kit-utils": "latest"
+    "@hiberworld/code-kit": "^3.12.2",
+    "@hiberworld/code-kit-cli": "^0.4.1",
+    "@hiberworld/code-kit-prefabs": "^0.1.1",
+    "@hiberworld/code-kit-utils": "^2.5.3"
   }
 }
