@@ -1,6 +1,7 @@
 import {
   BaseTransform,
   create,
+  EulerRotation,
   HNode,
   HNodeWithMethods,
   prefabs,
@@ -13,8 +14,20 @@ export type BrickFactory = (transform: BrickProps) => HNodeWithMethods | void;
 
 export const missingBrick: BrickFactory = (transform: BrickProps) => {};
 
-export const baseBrick: BrickFactory = (transform: BrickProps) => {
+export const baseBrick: BrickFactory = (props: BrickProps) => {
+  const transform = {
+    ...props,
+    rot: [0, 0, 0] as EulerRotation,
+  };
   const brick = create({ prefabId: "flat_cube_01", transform });
+
+  const arrow = create("sign_arrow_01", {
+    y: 0.3,
+    rotY: props.rot[1],
+    scale: 0.2,
+  });
+
+  brick!.add(arrow);
   return brick;
 };
 
@@ -45,4 +58,10 @@ export const blinkingBrick: BrickFactory = (transform: BrickProps) => {
   return brick;
 };
 
-export const bricks = [missingBrick, simpleBrick, blinkingBrick];
+export const pointingBrick: BrickFactory = (props: BrickProps) => {
+  const brick = baseBrick(props);
+
+  return brick;
+};
+
+export const bricks = [missingBrick, simpleBrick, blinkingBrick, pointingBrick];

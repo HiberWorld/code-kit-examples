@@ -13,30 +13,47 @@ const world = create({ y: -1 });
 
 var rsd = new RandomSeed(8);
 
-var brickSize = 4;
-
 const grid: HNodeWithMethods[][] = [];
 let unsafeBricks: HNodeWithMethods[] = [];
 
-for (let x = 0; x < 5; x++) {
+const CENTER = 2;
+const MAX = CENTER * 2;
+const GRIDSIZE = MAX + 1;
+
+function isSafe(x: number, z: number) {
+  return (
+    ((z === 0 || z === MAX) && x % 2 === 0) ||
+    ((x === 0 || x === MAX) && z % 2 === 0)
+  );
+}
+
+for (let x = 0; x < GRIDSIZE; x++) {
   grid[x] = [];
 
-  for (let z = 0; z < 5; z++) {
+  for (let z = 0; z < GRIDSIZE; z++) {
+    const dx = x - CENTER;
+    const dz = z - CENTER;
+
+    let rotY;
+
+    rotY = Math.floor((Math.atan(dx / dz) * 360) / (2 * Math.PI)) - 90;
+
+    console.log("rot:" + rotY);
+
     const transform: BrickProps = {
-      pos: [(x - 2) * brickSize, 0, (z - 2) * brickSize],
+      pos: [(x - CENTER) * MAX, 0, (z - CENTER) * MAX],
       scale: 2,
-      rot: [0, 0, 0],
+      rot: [0, rotY, 0],
       rsd,
     };
 
     let factory: BrickFactory;
-    let unsafe = false;
+    let safe = isSafe(x, z);
 
-    if (z + x === 0) {
+    if (safe) {
       factory = spawnBrick;
     } else {
       factory = rsd.randomFromArray(bricks);
-      unsafe = true;
     }
 
     const brick = factory(transform);
@@ -45,7 +62,7 @@ for (let x = 0; x < 5; x++) {
       world.add(brick);
       grid[x][z] = brick;
 
-      if (unsafe) unsafeBricks.push(brick);
+      if (!safe) unsafeBricks.push(brick);
     }
   }
 }
@@ -53,8 +70,8 @@ for (let x = 0; x < 5; x++) {
 // wire signals
 let i = 1;
 
-for (let x = 0; x < 5; x++) {
-  for (let z = 0; z < 5; z++) {
+for (let x = 0; x < GRIDSIZE; x++) {
+  for (let z = 0; z < GRIDSIZE; z++) {
     const brick = grid[x][z];
 
     if (brick && unsafeBricks.length) {
@@ -63,7 +80,7 @@ for (let x = 0; x < 5; x++) {
       const id = (i++).toString();
       brick.signalSource = {
         id,
-        playerProximitySensor: { maxDistance: 3, minDistance: 0 },
+        playerProximitySensor: { maxDistance: 2.8, minDistance: 0 },
       };
 
       if (brick === otherBrick) {
@@ -76,7 +93,7 @@ for (let x = 0; x < 5; x++) {
             otherBrick.transform?.pos
         );
 
-        brick.signalListener = {
+        otherBrick.signalListener = {
           target: id,
           invisibleOnSignal: { dummy: true },
         };
