@@ -16,7 +16,7 @@ var rsd = new RandomSeed(8);
 const grid: HNodeWithMethods[][] = [];
 let unsafeBricks: HNodeWithMethods[] = [];
 
-const CENTER = 2;
+const CENTER = 10;
 const MAX = CENTER * 2;
 const GRIDSIZE = MAX + 1;
 
@@ -31,17 +31,19 @@ for (let x = 0; x < GRIDSIZE; x++) {
   grid[x] = [];
 
   for (let z = 0; z < GRIDSIZE; z++) {
-    const dx = x - CENTER;
-    const dz = z - CENTER;
+    const dx = MAX / 2 - x;
+    const dz = MAX / 2 - z;
 
     let rotY;
 
-    rotY = Math.floor((Math.atan(dx / dz) * 360) / (2 * Math.PI)) - 90;
+    rotY = Math.floor((Math.atan2(dx, dz) * 180) / Math.PI);
+
+    if (rotY < 0) rotY = rotY + 360;
 
     console.log("rot:" + rotY);
 
     const transform: BrickProps = {
-      pos: [(x - CENTER) * MAX, 0, (z - CENTER) * MAX],
+      pos: [(x - CENTER) * 2, 0, (z - CENTER) * 2],
       scale: 2,
       rot: [0, rotY, 0],
       rsd,
