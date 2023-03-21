@@ -16,7 +16,8 @@ var rsd = new RandomSeed(8);
 const grid: HNodeWithMethods[][] = [];
 let unsafeBricks: HNodeWithMethods[] = [];
 
-const CENTER = 10;
+const BRICKSIZE = 4;
+const CENTER = 2;
 const MAX = CENTER * 2;
 const GRIDSIZE = MAX + 1;
 
@@ -40,10 +41,8 @@ for (let x = 0; x < GRIDSIZE; x++) {
 
     if (rotY < 0) rotY = rotY + 360;
 
-    console.log("rot:" + rotY);
-
     const transform: BrickProps = {
-      pos: [(x - CENTER) * 2, 0, (z - CENTER) * 2],
+      pos: [(x - CENTER) * BRICKSIZE, 0, (z - CENTER) * BRICKSIZE],
       scale: 2,
       rot: [0, rotY, 0],
       rsd,
@@ -85,8 +84,10 @@ for (let x = 0; x < GRIDSIZE; x++) {
         playerProximitySensor: { maxDistance: 2.8, minDistance: 0 },
       };
 
+      let targetPost;
+
       if (brick === otherBrick) {
-        console.log("Same!");
+        targetPost = create("fx_take_damage_purple_smoke_01", { y: 2 });
       } else {
         console.log(
           "Connecting " +
@@ -99,7 +100,31 @@ for (let x = 0; x < GRIDSIZE; x++) {
           target: id,
           invisibleOnSignal: { dummy: true },
         };
+
+        targetPost = create({ y: 0 })
+          .animate(
+            {
+              x: [
+                /*brick.transform?.pos?.[0]!, */ otherBrick.transform
+                  ?.pos?.[0]!,
+              ],
+              z: [
+                /*brick.transform?.pos?.[2]!,*/ otherBrick.transform?.pos?.[2]!,
+              ],
+            },
+            { easing: "LINEAR" }
+          )
+          .add(
+            create("sphere_01", {
+              y: 1,
+              s: 0.1,
+            })
+          );
       }
+
+      targetPost.transform.pos = { ...brick.transform?.pos };
+
+      world.add(targetPost);
 
       unsafeBricks = unsafeBricks.filter((b) => b !== otherBrick);
     }
