@@ -4,7 +4,7 @@
  * Refer to Example 1 for information about basic code structure.
  */
 
-import { Scene, HNode, renderScene } from "@hiberworld/code-kit";
+import { Scene, HNode, renderScene, create } from "@hiberworld/code-kit";
 import {
   placeInCircle,
   PlaceInCircleOnEachProps,
@@ -184,10 +184,9 @@ const steps = placeInCircle({
 
 addSubtleAnimation(steps[13]);
 
-const placeInCircleStaircaseBase: HNode = {
+const placeInCircleStaircaseBase = create({
   transform: { pos: [-20, 2.1, 17], rot: [0, 0, 0] },
-  children: steps,
-};
+}).add(...steps);
 
 // Loop for 20 times to create stairs
 for (let index = 0; index < 20; index++) {
