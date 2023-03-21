@@ -75,20 +75,26 @@ for (let x = 0; x < GRIDSIZE; x++) {
   for (let z = 0; z < GRIDSIZE; z++) {
     const brick = grid[x][z];
 
-    if (brick && unsafeBricks.length) {
-      const otherBrick = rsd.randomFromArray(unsafeBricks);
+    let safe = isSafe(x, z);
 
-      const id = (i++).toString();
-      brick.signalSource = {
-        id,
-        playerProximitySensor: { maxDistance: 2.8, minDistance: 0 },
-      };
+    if (brick && !safe) {
+      if (unsafeBricks.length) {
+        const otherBrick = rsd.randomFromArray(unsafeBricks);
 
-      let targetPost;
+        const id = (i++).toString();
+        brick.signalSource = {
+          id,
+          playerProximitySensor: { maxDistance: 2.8, minDistance: 0 },
+        };
 
-      if (brick === otherBrick) {
-        targetPost = create("fx_take_damage_purple_smoke_01", { y: 2 });
-      } else {
+        if (brick === otherBrick) {
+          otherBrick.prefabId = "en_m_primitive_window_01";
+
+          otherBrick.transform!.rot![0] = 90;
+          otherBrick.transform!.pos = [0, -1, 2];
+          otherBrick.transform!.scale = 1;
+        } else {
+        }
         console.log(
           "Connecting " +
             brick.transform?.pos +
@@ -101,32 +107,33 @@ for (let x = 0; x < GRIDSIZE; x++) {
           invisibleOnSignal: { dummy: true },
         };
 
-        targetPost = create({ y: 0 })
-          .animate(
-            {
-              x: [
-                /*brick.transform?.pos?.[0]!, */ otherBrick.transform
-                  ?.pos?.[0]!,
-              ],
-              z: [
-                /*brick.transform?.pos?.[2]!,*/ otherBrick.transform?.pos?.[2]!,
-              ],
-            },
-            { easing: "LINEAR" }
-          )
-          .add(
-            create("sphere_01", {
-              y: 1,
-              s: 0.1,
-            })
-          );
+        // let targetPost;
+        // targetPost = create({ y: 0 })
+        //   .animate(
+        //     {
+        //       x: [
+        //         brick.transform?.pos?.[0]!,
+        //         otherBrick.transform?.pos?.[0]!,
+        //       ],
+        //       z: [
+        //         brick.transform?.pos?.[2]!,
+        //         otherBrick.transform?.pos?.[2]!,
+        //       ],
+        //     },
+        //     { easing: "LINEAR" }
+        //   )
+        //   .add(
+        //     create("sphere_01", {
+        //       s: 0.1,
+        //     })
+        //   );
+
+        // targetPost.transform.pos = [0, 1, 0];
+
+        // world.add(targetPost);
+
+        unsafeBricks = unsafeBricks.filter((b) => b !== otherBrick);
       }
-
-      targetPost.transform.pos = { ...brick.transform?.pos };
-
-      world.add(targetPost);
-
-      unsafeBricks = unsafeBricks.filter((b) => b !== otherBrick);
     }
   }
 }
