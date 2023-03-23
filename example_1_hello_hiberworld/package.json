@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "@hiberworld/code-kit": "latest",
-    "@hiberworld/code-kit-cli": "^0.4.7",
+    "@hiberworld/code-kit-cli": "0.4.8",
     "@hiberworld/code-kit-utils": "latest"
   }
 }

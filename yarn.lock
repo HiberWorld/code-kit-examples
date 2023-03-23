@@ -345,10 +345,10 @@
   resolved "https://registry.yarnpkg.com/@hiberworld/code-kit-assets/-/code-kit-assets-1.0.9.tgz#ce80c7a154d70906fc977e2ceafef54adcd01559"
   integrity sha512-XiubdDpArCOsS2pZqacC18TasMr6rCxS4F6DZnb205UCbyXEIF8aRtOO0AwV7euq6nRvJ5gGihEO3DtOCkGrDQ==
 
-"@hiberworld/code-kit-cli@^0.4.7", "@hiberworld/code-kit-cli@latest":
-  version "0.4.7"
-  resolved "https://registry.yarnpkg.com/@hiberworld/code-kit-cli/-/code-kit-cli-0.4.7.tgz#65de7a8dc85bc3676aa1ad4582fc94fd46a4a8bb"
-  integrity sha512-ZkX7WKNN6tUpqNZaLXzpKLv3iEEf5ef3snx0vyVtMyn8VH8A+pQbQ44l0/6fMC297yEUv/RJLMPkSUhcPMnEEw==
+"@hiberworld/code-kit-cli@0.4.8", "@hiberworld/code-kit-cli@latest":
+  version "0.4.8"
+  resolved "https://registry.yarnpkg.com/@hiberworld/code-kit-cli/-/code-kit-cli-0.4.8.tgz#b2290318ac4de4e24c2e4977a0a7da44f87ec588"
+  integrity sha512-78tHRpWD8VWxxksnbQBsVA8xxphE6EQ7RnrUdyyn68GsewxxCTy7MZwEq6VUYdHqj+veSkDHJiUHRbuLFRJoyQ==
   dependencies:
     vite "^4.1.4"
 
