@@ -1,0 +1,24 @@
+name: "Restore cache"
+description: "Install and cache node_modules"
+
+inputs:
+  world:
+    description: "Local world folder name"
+    required: false
+    default: "example_1_hello_hiberworld"
+
+runs:
+  using: "composite"
+  steps:
+    - name: Build
+      working-directory: ./${{ inputs.world }}
+      env:
+        SAVE_ON_CLOSE: true
+      run: |
+        yarn
+        yarn dev
+
+    - name: Publish
+      working-directory: ./${{ inputs.world }}
+      run: |
+        yarn upload --debug
