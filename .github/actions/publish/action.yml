@@ -29,14 +29,14 @@ runs:
       uses: actions/upload-artifact@v3
       with:
         name: Screenshot
-        path: screenshot.jpg
+        path: ./${{ inputs.world }}/screenshot.jpg
         retention-days: 5
 
     - name: "Upload scene.json"
       uses: actions/upload-artifact@v3
       with:
         name: Scene
-        path: scene.json
+        path: ./${{ inputs.world }}/scene.json
         retention-days: 5
 
     - name: Publish
