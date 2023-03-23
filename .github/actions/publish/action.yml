@@ -20,8 +20,8 @@ runs:
         echo $SAVE_ON_CLOSE
         yarn
         yarn dev &
+        sleep 10
         npx puppeteer-cli screenshot http://localhost:5173/ screenshot.jpg
-        fg
         ls
 
     - name: "Upload Screenshot"
