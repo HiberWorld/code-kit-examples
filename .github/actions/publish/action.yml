@@ -20,16 +20,16 @@ runs:
         echo $SAVE_ON_CLOSE
         yarn
         yarn dev &
-        sleep 20
-        npx puppeteer-cli screenshot http://localhost:5173/ screenshot.jpg
-        sleep 20
-        ls
+        sleep 10
+
+    - name: "Generate scene.json"
+      uses: ./.github/actions/open_url
 
     - name: "Upload Screenshot"
       uses: actions/upload-artifact@v3
       with:
         name: Screenshot
-        path: ./${{ inputs.world }}/screenshot.jpg
+        path: ./${{ inputs.world }}/screenshot.png
         retention-days: 5
 
     - name: "Upload scene.json"
