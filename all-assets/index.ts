@@ -20,8 +20,8 @@ let offset = 100;
 let i = 0;
 
 for (const prefab in prefabs) {
-  x += 35; // Increase to have more space between asset in the rows
   if (!excludeIds.includes(prefabs[prefab].id)) {
+    x += 35; // Increase to have more space between asset in the rows
     create({
       prefabId: prefabs[prefab].id,
       y: 20, //Set higher for assets to be above fog
