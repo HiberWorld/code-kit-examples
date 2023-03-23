@@ -16,8 +16,17 @@ runs:
       env:
         SAVE_ON_CLOSE: true
       run: |
+        echo $SAVE_ON_CLOSE
         yarn
-        yarn dev
+        yarn dev &
+        npx puppeteer-cli screenshot http://localhost:5173/ screenshot.jpg
+
+    - name: "Upload Screenshot"
+      uses: actions/upload-artifact@v3
+      with:
+        name: Screenshot
+        path: ./${{ inputs.world }}/*.j*
+        retention-days: 5
 
     - name: Publish
       shell: bash
