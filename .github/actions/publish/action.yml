@@ -17,10 +17,10 @@ runs:
         SAVE_ON_CLOSE: true
       run: |
         yarn
-        yarn dev --debug
+        yarn dev
 
     - name: Publish
       shell: bash
       working-directory: ./${{ inputs.world }}
       run: |
-        yarn upload --debug
+        yarn upload
