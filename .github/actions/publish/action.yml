@@ -17,7 +17,7 @@ runs:
         SAVE_ON_CLOSE: true
       run: |
         yarn
-        yarn dev
+        yarn dev --debug
 
     - name: Publish
       shell: bash

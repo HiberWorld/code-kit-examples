@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "workspaces": [
+    "example_1_hello_hiberworld",
+    "example_2_builder"
+  ]
+}
