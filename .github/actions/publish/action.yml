@@ -11,6 +11,7 @@ runs:
   using: "composite"
   steps:
     - name: Build
+      shell: bash
       working-directory: ./${{ inputs.world }}
       env:
         SAVE_ON_CLOSE: true
@@ -19,6 +20,7 @@ runs:
         yarn dev
 
     - name: Publish
+      shell: bash
       working-directory: ./${{ inputs.world }}
       run: |
         yarn upload --debug
