@@ -5,7 +5,7 @@ const world = create({ y: -1 });
 /////////////////////////////////////////// - NOTE - ////////////////////////////////////////
 ///// Due to the large number of assets being added you will need to have DevTools open /////
 /////////////////////////////////////////////////////////////////////////////////////////////
-
+const enableLargeAssets = false;
 
 // Add separate placement for larger assets currently in 'excludeIds"
 const excludeIds = ['gpl_mechanic_count_down_timer_01', 'large_snow_plane_01', 'large_sand_plane_01', 'large_stone_floor_plane_01', 'large_stone_tiles_plane_03', 'plane_terrain_01', 'plane_terrain_02',
@@ -13,7 +13,7 @@ const excludeIds = ['gpl_mechanic_count_down_timer_01', 'large_snow_plane_01', '
   'en_m_hiberpunk_building_02_middle', 'en_m_hiberpunk_building_02_middle_02', 'en_m_hiberpunk_building_02_top', 'en_m_hiberpunk_building_01_top', 'en_m_hiberpunk_building_01_middle_02', 'en_m_hiberpunk_building_03_bottom',
   'en_m_hiberpunk_building_03_middle', 'en_m_hiberpunk_building_03_top'];
 
-
+// Adding all assets not included in "excludeIds"
 let z = 20; // Increase to have more space between each row to acommadate larger assets
 let x = 0;
 let offset = 100;
@@ -42,6 +42,38 @@ for (const prefab in prefabs) {
     }
   }
 };
+
+// Adds all larger prefabs added in "excludeIds" - Can be enabled/disabled by changin "enableLargeAssets"
+if (enableLargeAssets) {
+  let z_L = -150; // Increase to have more space between each row to acommadate larger assets
+  let x_L = -100;
+  let offset_L = -20;
+  let i_L = 0;
+
+  for (const prefab in prefabs) {
+    if (excludeIds.includes(prefabs[prefab].id)) {
+      x_L += 190; // Increase to have more space between asset in the rows
+      create({
+        prefabId: prefabs[prefab].id,
+        y: 20, //Set higher for assets to be above fog
+        x: -50 + x_L,
+        z: z_L + offset_L,
+        infoPanel: {
+          header: 'Asset ID:',
+          preBody: prefabs[prefab].id,
+          maxShowDistance: 40,
+          minShowDistance: 0
+        }
+      }).addTo(world);
+      i_L += 1;
+      if (i_L % 6 === 0) {
+        offset_L += z_L;
+        x_L = 0;
+        i_L = 0;
+      }
+    }
+  };
+}
 
 // Plane to add specific assets
 const TestPlane = create({ prefabId: 'plane_02', y: 20, z: 60 }).addTo(world);
