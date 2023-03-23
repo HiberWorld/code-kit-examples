@@ -43,4 +43,5 @@ runs:
       working-directory: ./${{ inputs.world }}
       run: |
         pwd
+        ls
         yarn upload --debug
