@@ -36,6 +36,11 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - uses: ./.github/actions/restore-cache
+
       - uses: ./.github/actions/publish
         with:
           world: "example_1_hello_hiberworld"
+
+      - uses: ./.github/actions/publish
+        with:
+          world: "example_2_builder"

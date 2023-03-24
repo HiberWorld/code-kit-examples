@@ -1,15 +1,15 @@
 {
-  "name": "example_2_builder",
+  "name": "example_1_hello_hiberworld",
   "version": "0.0.1",
   "license": "MIT",
   "private": true,
   "scripts": {
-    "dev": "code-kit dev --open",
+    "dev": "code-kit dev",
     "upload": "code-kit upload"
   },
   "dependencies": {
     "@hiberworld/code-kit": "latest",
-    "@hiberworld/code-kit-cli": "latest",
+    "@hiberworld/code-kit-cli": "0.4.9",
     "@hiberworld/code-kit-utils": "latest"
   }
 }

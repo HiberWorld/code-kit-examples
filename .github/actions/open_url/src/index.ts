@@ -6,10 +6,10 @@ import { exec } from "child_process";
 import puppeteer from "puppeteer";
 import * as core from "@actions/core";
 
-// setTimeout(() => {
-//   console.log("Error: Watchdog triggered.");
-//   exit(1);
-// }, 60000);
+setTimeout(() => {
+  console.log("Error: Watchdog triggered.");
+  exit(1);
+}, 60000);
 
 const cwd = __dirname + "/..";
 

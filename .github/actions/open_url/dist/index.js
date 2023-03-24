@@ -40449,10 +40449,10 @@ launch: puppeteer_launch, } = puppeteer_puppeteer;
 
 
 
-// setTimeout(() => {
-//   console.log("Error: Watchdog triggered.");
-//   exit(1);
-// }, 60000);
+setTimeout(() => {
+    console.log("Error: Watchdog triggered.");
+    (0,external_process_namespaceObject.exit)(1);
+}, 60000);
 const cwd = __dirname + "/..";
 const src_open = async () => {
     console.log("Opening page...");
