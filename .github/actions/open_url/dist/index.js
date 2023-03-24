@@ -40487,9 +40487,7 @@ const src_open = async () => {
         });
     }
 };
-console.log("Starting up...");
 const npmPromise = new Promise((resolve) => {
-    console.log("...");
     (0,external_child_process_namespaceObject.exec)(`cd ${cwd} && npm i && cd ./node_modules/puppeteer && npm run postinstall`, (error, stdout, stderr) => {
         if (error) {
             console.log(`error: ${error.message}`);

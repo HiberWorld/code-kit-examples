@@ -5,7 +5,7 @@ inputs:
   world:
     description: "Local world folder name"
     required: false
-    default: "example_1_hello_hiberworld"
+    default: "."
 
 runs:
   using: "composite"
@@ -14,34 +14,25 @@ runs:
       shell: bash
       working-directory: ./${{ inputs.world }}
       env:
-        CLOSE_ON_SAVE: true
+        - CLOSE_ON_SAVE: true
       run: |
-        pwd
-        echo $CLOSE_ON_SAVE
         yarn
-        (yarn dev && echo "Exiting Web Done") &
+        yarn dev &
 
     - name: "Generate scene.json"
       uses: ./.github/actions/open_url
 
-    - name: "Upload Screenshot"
-      uses: actions/upload-artifact@v3
-      with:
-        name: Screenshot
-        path: ./${{ inputs.world }}/screenshot.png
-        retention-days: 5
-
-    - name: "Upload scene.json"
-      uses: actions/upload-artifact@v3
-      with:
-        name: Scene
-        path: ./${{ inputs.world }}/scene.json
-        retention-days: 5
+    # - name: "Upload scene.json"
+    #   uses: actions/upload-artifact@v3
+    #   with:
+    #     name: Scene
+    #     path: ./${{ inputs.world }}/scene.json
+    #     retention-days: 5
 
     - name: Publish
       shell: bash
       working-directory: ./${{ inputs.world }}
+      env:
+        - IGNORE_SCENE_CHANGE: true
       run: |
-        pwd
-        ls
-        yarn upload --debug
+        yarn upload

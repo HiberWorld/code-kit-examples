@@ -55,11 +55,7 @@ const open = async () => {
   }
 };
 
-console.log("Starting up...");
-
 const npmPromise = new Promise<void>((resolve) => {
-  console.log("...");
-
   exec(
     `cd ${cwd} && npm i && cd ./node_modules/puppeteer && npm run postinstall`,
     (
