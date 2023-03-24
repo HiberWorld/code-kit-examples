@@ -36265,14 +36265,14 @@ switch (productName) {
 /**
  * @public
  */
-const puppeteer_puppeteer = new PuppeteerNode({
+const puppeteer = new PuppeteerNode({
     projectRoot: getPackageDirectory(rootDirname),
     preferredRevision,
     isPuppeteerCore: false,
     productName,
 });
-const { connect, createBrowserFetcher, defaultArgs, executablePath, launch, } = puppeteer_puppeteer;
-/* harmony default export */ const esm_puppeteer_puppeteer = ((/* unused pure expression or super */ null && (puppeteer_puppeteer)));
+const { connect, createBrowserFetcher, defaultArgs, executablePath, launch, } = puppeteer;
+/* harmony default export */ const puppeteer_puppeteer = (puppeteer);
 //# sourceMappingURL=puppeteer.js.map
 ;// CONCATENATED MODULE: ./src/index.ts
 /* eslint-disable no-console */
@@ -36300,16 +36300,16 @@ console.log("Starting up...");
 (0,external_child_process_namespaceObject.exec)("npm install", output);
 console.log("...");
 const src_open = async () => {
-    const browser = await puppeteer.launch();
+    const browser = await puppeteer_puppeteer.launch();
     const page = await browser.newPage();
     page.on("console", (msg) => console.log("PAGE LOG:", msg.text()));
     page.on("error", (msg) => {
         console.error("Page crashed:", msg);
-        exit(1);
+        (0,external_process_namespaceObject.exit)(1);
     });
     page.on("pageerror", (msg) => {
         console.error("Uncaught exception in page:", msg);
-        exit(1);
+        (0,external_process_namespaceObject.exit)(1);
     });
     let retry = 10;
     while (retry) {
@@ -36323,16 +36323,16 @@ const src_open = async () => {
             .catch(() => {
             retry--;
             if (!retry) {
-                exit(1);
+                (0,external_process_namespaceObject.exit)(1);
             }
             return new Promise((resolve) => setTimeout(resolve, 3000));
         });
     }
 };
-// (async () => {
-//   console.log("Trying open...");
-//   await open();
-// })();
+(async () => {
+    console.log("Trying open...");
+    await src_open();
+})();
 
 })();
 

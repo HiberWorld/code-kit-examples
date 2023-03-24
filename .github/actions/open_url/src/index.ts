@@ -71,7 +71,7 @@ const open = async () => {
   }
 };
 
-// (async () => {
-//   console.log("Trying open...");
-//   await open();
-// })();
+(async () => {
+  console.log("Trying open...");
+  await open();
+})();
