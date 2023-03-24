@@ -1,5 +1,3 @@
 node_modules
 scene.json
 .env
-
-tsconfig.build.tsbuildinfo

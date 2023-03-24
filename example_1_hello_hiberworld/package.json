@@ -4,12 +4,12 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "dev": "code-kit dev",
+    "dev": "code-kit dev --open",
     "upload": "code-kit upload"
   },
   "dependencies": {
     "@hiberworld/code-kit": "latest",
-    "@hiberworld/code-kit-cli": "0.4.9",
+    "@hiberworld/code-kit-cli": "latest",
     "@hiberworld/code-kit-utils": "latest"
   }
 }
