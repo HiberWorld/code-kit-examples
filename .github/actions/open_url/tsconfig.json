@@ -1,0 +1,20 @@
+{
+    "compilerOptions": {
+      "target": "es2019",
+      "module": "esnext",
+      "strict": true,
+      "esModuleInterop": true,
+      "skipLibCheck": true,
+      "forceConsistentCasingInFileNames": true,
+      "outDir": "dist",
+
+    "moduleResolution": "Node",
+      "lib": ["esnext"]
+    },
+    "references": [
+      {
+        "path": "./tsconfig.build.json"
+      }
+    ],
+    "exclude": ["node_modules"]
+  }
