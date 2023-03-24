@@ -23,12 +23,12 @@ const open = async () => {
 
   page.on("error", (msg) => {
     console.error("Page crashed:", msg);
-    exit(1);
+    browser.close();
   });
 
   page.on("pageerror", (msg) => {
     console.error("Uncaught exception in page:", msg);
-    exit(1);
+    browser.close();
   });
 
   let retry = 10;
@@ -55,7 +55,7 @@ const open = async () => {
 
 console.log("Starting up...");
 
-const promise = new Promise<void>((resolve) => {
+const npmPromise = new Promise<void>((resolve) => {
   console.log("...");
 
   exec(
@@ -79,7 +79,7 @@ const promise = new Promise<void>((resolve) => {
   );
 });
 
-const promise2 = new Promise<void>((resolve) => {
+const lsPromise = new Promise<void>((resolve) => {
   console.log("Listing");
 
   exec(
@@ -104,11 +104,11 @@ const promise2 = new Promise<void>((resolve) => {
 });
 
 (async () => {
-  console.log("Waiting for listing...");
-  await promise2;
+  // console.log("Waiting for listing...");
+  // await lsPromise;
 
   console.log("Waiting for install...");
-  await promise;
+  await npmPromise;
 
   console.log("Trying open...");
   await open();

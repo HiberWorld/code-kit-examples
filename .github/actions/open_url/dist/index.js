@@ -40461,11 +40461,11 @@ const src_open = async () => {
     page.on("console", (msg) => console.log("PAGE LOG:", msg.text()));
     page.on("error", (msg) => {
         console.error("Page crashed:", msg);
-        (0,external_process_namespaceObject.exit)(1);
+        browser.close();
     });
     page.on("pageerror", (msg) => {
         console.error("Uncaught exception in page:", msg);
-        (0,external_process_namespaceObject.exit)(1);
+        browser.close();
     });
     let retry = 10;
     while (retry) {
@@ -40486,7 +40486,7 @@ const src_open = async () => {
     }
 };
 console.log("Starting up...");
-const promise = new Promise((resolve) => {
+const npmPromise = new Promise((resolve) => {
     console.log("...");
     (0,external_child_process_namespaceObject.exec)(`cd ${cwd} && npm i && cd ./node_modules/puppeteer && npm run postinstall`, (error, stdout, stderr) => {
         if (error) {
@@ -40501,7 +40501,7 @@ const promise = new Promise((resolve) => {
         resolve();
     });
 });
-const promise2 = new Promise((resolve) => {
+const lsPromise = new Promise((resolve) => {
     console.log("Listing");
     (0,external_child_process_namespaceObject.exec)(`cd ${cwd} && ls`, (error, stdout, stderr) => {
         if (error) {
@@ -40517,10 +40517,10 @@ const promise2 = new Promise((resolve) => {
     });
 });
 (async () => {
-    console.log("Waiting for listing...");
-    await promise2;
+    // console.log("Waiting for listing...");
+    // await lsPromise;
     console.log("Waiting for install...");
-    await promise;
+    await npmPromise;
     console.log("Trying open...");
     await src_open();
 })();
