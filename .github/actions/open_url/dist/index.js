@@ -40396,9 +40396,26 @@ const promise = new Promise((resolve) => {
         resolve();
     });
 });
+const promise2 = new Promise((resolve) => {
+    console.log("Listing");
+    (0,external_child_process_namespaceObject.exec)("ls", (error, stdout, stderr) => {
+        if (error) {
+            console.log(`error: ${error.message}`);
+            return;
+        }
+        if (stderr) {
+            console.log(`stderr: ${stderr}`);
+            return;
+        }
+        console.log(`stdout: ${stdout}`);
+        resolve();
+    });
+});
 (async () => {
     console.log("Waiting for install...");
     await promise;
+    console.log("Waiting for listing...");
+    await promise2;
     console.log("Trying open...");
     await src_open();
 })();
