@@ -3,4 +3,4 @@ description: "Opens an url"
 
 runs:
   using: "node16"
-  main: "index.js"
+  main: "dist/index.js"
