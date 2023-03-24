@@ -78,7 +78,7 @@ const promise2 = new Promise<void>((resolve) => {
   console.log("Listing");
 
   exec(
-    "pwd && ls",
+    "pwd && ls && ls node_modules",
     (
       error: import("child_process").ExecException | null,
       stdout: string,
