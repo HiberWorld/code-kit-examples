@@ -9,7 +9,7 @@ import * as core from "@actions/core";
 setTimeout(() => {
   console.log("Error: Watchdog triggered.");
   exit(1);
-}, 60000);
+}, 120000);
 
 const cwd = __dirname + "/..";
 
@@ -79,29 +79,27 @@ const npmPromise = new Promise<void>((resolve) => {
   );
 });
 
-const lsPromise = new Promise<void>((resolve) => {
-  console.log("Listing");
-
-  exec(
-    `cd ${cwd} && ls`,
-    (
-      error: import("child_process").ExecException | null,
-      stdout: string,
-      stderr: string
-    ): void => {
-      if (error) {
-        console.log(`error: ${error.message}`);
-        return;
-      }
-      if (stderr) {
-        console.log(`stderr: ${stderr}`);
-        return;
-      }
-      console.log(`stdout: ${stdout}`);
-      resolve();
-    }
-  );
-});
+// const lsPromise = new Promise<void>((resolve) => {
+//   exec(
+//     `cd ${cwd} && ls`,
+//     (
+//       error: import("child_process").ExecException | null,
+//       stdout: string,
+//       stderr: string
+//     ): void => {
+//       if (error) {
+//         console.log(`error: ${error.message}`);
+//         return;
+//       }
+//       if (stderr) {
+//         console.log(`stderr: ${stderr}`);
+//         return;
+//       }
+//       console.log(`stdout: ${stdout}`);
+//       resolve();
+//     }
+//   );
+// });
 
 (async () => {
   // console.log("Waiting for listing...");

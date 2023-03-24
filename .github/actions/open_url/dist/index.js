@@ -40452,7 +40452,7 @@ launch: puppeteer_launch, } = puppeteer_puppeteer;
 setTimeout(() => {
     console.log("Error: Watchdog triggered.");
     (0,external_process_namespaceObject.exit)(1);
-}, 60000);
+}, 120000);
 const cwd = __dirname + "/..";
 const src_open = async () => {
     console.log("Opening page...");
@@ -40501,21 +40501,27 @@ const npmPromise = new Promise((resolve) => {
         resolve();
     });
 });
-const lsPromise = new Promise((resolve) => {
-    console.log("Listing");
-    (0,external_child_process_namespaceObject.exec)(`cd ${cwd} && ls`, (error, stdout, stderr) => {
-        if (error) {
-            console.log(`error: ${error.message}`);
-            return;
-        }
-        if (stderr) {
-            console.log(`stderr: ${stderr}`);
-            return;
-        }
-        console.log(`stdout: ${stdout}`);
-        resolve();
-    });
-});
+// const lsPromise = new Promise<void>((resolve) => {
+//   exec(
+//     `cd ${cwd} && ls`,
+//     (
+//       error: import("child_process").ExecException | null,
+//       stdout: string,
+//       stderr: string
+//     ): void => {
+//       if (error) {
+//         console.log(`error: ${error.message}`);
+//         return;
+//       }
+//       if (stderr) {
+//         console.log(`stderr: ${stderr}`);
+//         return;
+//       }
+//       console.log(`stdout: ${stdout}`);
+//       resolve();
+//     }
+//   );
+// });
 (async () => {
     // console.log("Waiting for listing...");
     // await lsPromise;
