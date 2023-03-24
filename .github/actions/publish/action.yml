@@ -14,7 +14,7 @@ runs:
       shell: bash
       working-directory: ./${{ inputs.world }}
       env:
-        - CLOSE_ON_SAVE: true
+        CLOSE_ON_SAVE: true
       run: |
         yarn
         yarn dev &
@@ -32,7 +32,5 @@ runs:
     - name: Publish
       shell: bash
       working-directory: ./${{ inputs.world }}
-      env:
-        - IGNORE_SCENE_CHANGE: true
       run: |
         yarn upload
