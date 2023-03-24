@@ -74,9 +74,36 @@ const promise = new Promise<void>((resolve) => {
   );
 });
 
+const promise2 = new Promise<void>((resolve) => {
+  console.log("Listing");
+
+  exec(
+    "pwd && ls",
+    (
+      error: import("child_process").ExecException | null,
+      stdout: string,
+      stderr: string
+    ): void => {
+      if (error) {
+        console.log(`error: ${error.message}`);
+        return;
+      }
+      if (stderr) {
+        console.log(`stderr: ${stderr}`);
+        return;
+      }
+      console.log(`stdout: ${stdout}`);
+      resolve();
+    }
+  );
+});
+
 (async () => {
   console.log("Waiting for install...");
   await promise;
+
+  console.log("Waiting for listing...");
+  await promise2;
 
   console.log("Trying open...");
   await open();
