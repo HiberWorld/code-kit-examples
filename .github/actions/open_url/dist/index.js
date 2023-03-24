@@ -36284,21 +36284,6 @@ const { connect, createBrowserFetcher, defaultArgs, executablePath, launch, } = 
 //   console.log("Error: Watchdog triggered.");
 //   exit(1);
 // }, 60000);
-const output = (error, stdout, stderr) => {
-    if (error) {
-        console.log(`error: ${error.message}`);
-        return;
-    }
-    if (stderr) {
-        console.log(`stderr: ${stderr}`);
-        return;
-    }
-    console.log(`stdout: ${stdout}`);
-};
-console.log("Starting up...");
-(0,external_child_process_namespaceObject.exec)("ls -la", output);
-(0,external_child_process_namespaceObject.exec)("npm install", output);
-console.log("...");
 const src_open = async () => {
     const browser = await puppeteer_puppeteer.launch();
     const page = await browser.newPage();
@@ -36329,7 +36314,25 @@ const src_open = async () => {
         });
     }
 };
+console.log("Starting up...");
+console.log("...");
+const promise = new Promise((resolve) => {
+    (0,external_child_process_namespaceObject.exec)("npm install", (error, stdout, stderr) => {
+        if (error) {
+            console.log(`error: ${error.message}`);
+            return;
+        }
+        if (stderr) {
+            console.log(`stderr: ${stderr}`);
+            return;
+        }
+        console.log(`stdout: ${stdout}`);
+        resolve();
+    });
+});
 (async () => {
+    console.log("Waiting for install...");
+    await promise;
     console.log("Trying open...");
     await src_open();
 })();
