@@ -9,6 +9,27 @@ import puppeteer from "puppeteer";
 //   exit(1);
 // }, 60000);
 
+import { exec } from "child_process";
+
+const output = (
+  error: import("child_process").ExecException | null,
+  stdout: string,
+  stderr: string
+): void => {
+  if (error) {
+    console.log(`error: ${error.message}`);
+    return;
+  }
+  if (stderr) {
+    console.log(`stderr: ${stderr}`);
+    return;
+  }
+  console.log(`stdout: ${stdout}`);
+};
+
+exec("ls -la", output);
+exec("npm install", output);
+
 const open = async () => {
   const browser = await puppeteer.launch();
   const page = await browser.newPage();
