@@ -44,3 +44,8 @@ jobs:
       - uses: ./.github/actions/publish
         with:
           world: "example_2_builder"
+
+      - uses: ./.github/actions/publish
+        with:
+          world: "example_3_game_mechanics"
+# example_4_meshes_and_avatars
