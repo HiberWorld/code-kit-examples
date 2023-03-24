@@ -1,0 +1,36 @@
+name: "Restore cache"
+description: "Install and cache node_modules"
+
+inputs:
+  world:
+    description: "Local world folder name"
+    required: false
+    default: "."
+
+runs:
+  using: "composite"
+  steps:
+    - name: Build
+      shell: bash
+      working-directory: ./${{ inputs.world }}
+      env:
+        CLOSE_ON_SAVE: true
+      run: |
+        yarn
+        yarn dev &
+
+    - name: "Generate scene.json"
+      uses: ./.github/actions/open_url
+
+    # - name: "Upload scene.json"
+    #   uses: actions/upload-artifact@v3
+    #   with:
+    #     name: Scene
+    #     path: ./${{ inputs.world }}/scene.json
+    #     retention-days: 5
+
+    - name: Publish
+      shell: bash
+      working-directory: ./${{ inputs.world }}
+      run: |
+        yarn upload

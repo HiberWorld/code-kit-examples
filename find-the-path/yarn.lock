@@ -345,7 +345,7 @@
   resolved "https://registry.yarnpkg.com/@hiberworld/code-kit-assets/-/code-kit-assets-1.0.8.tgz#ad2979f5e4f38eaa47b6f732fa3bcadb56f55421"
   integrity sha512-bTwNo17KT030bV8XsOvhc3rogcgm4zlBQOTVnTs2jGrX2C7UBX/+CJLmy8kbzOlBlwoBip5jyWvCihPr87L+1w==
 
-"@hiberworld/code-kit-cli@latest":
+"@hiberworld/code-kit-cli@0.4.9":
   version "0.4.1"
   resolved "https://registry.yarnpkg.com/@hiberworld/code-kit-cli/-/code-kit-cli-0.4.1.tgz#216ea1dcda4d7fb2a40d4f4d8f7b93b8f8ad0e66"
   integrity sha512-Ch1O2kZTICIIzEOcfK3Loepg6yCPcwqbp0otWwn+5oxnyw2v7qTAp3gQ7ela+8JP0/OpPXici0I5m2P+Fmb4WA==

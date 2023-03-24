@@ -1,0 +1,49 @@
+name: "Publish World"
+
+on:
+  workflow_dispatch:
+
+  push:
+    branches:
+      - main
+
+jobs:
+  Setup:
+    name: Install dependencies
+    runs-on: ubuntu-latest
+    steps:
+      - name: Git Checkout
+        uses: actions/checkout@v3
+
+      - uses: ./.github/actions/restore-cache
+        id: cache-dependencies
+
+      - name: Install dependencies
+        if: steps.cache-dependencies.outputs.cache-hit != 'true'
+        run: yarn --frozen-lockfile
+
+  Publish:
+    name: Publish worlds
+    runs-on: ubuntu-latest
+    needs: Setup
+    env:
+      DEVELOPER_TOKEN: ${{ secrets.DEVELOPER_TOKEN }}
+    steps:
+      - uses: actions/checkout@v3
+      - uses: ./.github/actions/restore-cache
+
+      - uses: ./.github/actions/publish
+        with:
+          world: "example_1_hello_hiberworld"
+
+      - uses: ./.github/actions/publish
+        with:
+          world: "example_2_builder"
+
+      - uses: ./.github/actions/publish
+        with:
+          world: "example_3_game_mechanics"
+
+      - uses: ./.github/actions/publish
+        with:
+          world: "example_4_meshes_and_avatars"
