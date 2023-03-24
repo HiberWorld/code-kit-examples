@@ -11,7 +11,7 @@ import * as core from "@actions/core";
 //   exit(1);
 // }, 60000);
 
-console.log(__dirname);
+const cwd = __dirname + "/..";
 
 const open = async () => {
   const browser = await puppeteer.launch();
@@ -57,7 +57,7 @@ const promise = new Promise<void>((resolve) => {
   console.log("...");
 
   exec(
-    "npm i && cd node_modules/puppeteer && npm run postinstall",
+    `cd ${cwd} && npm i && cd ./node_modules/puppeteer && npm run postinstall`,
     (
       error: import("child_process").ExecException | null,
       stdout: string,
@@ -81,7 +81,7 @@ const promise2 = new Promise<void>((resolve) => {
   console.log("Listing");
 
   exec(
-    "pwd && ls && ls node_modules",
+    "cd ${cwd} && ls && ls node_modules && ls node_modules/puppeteer",
     (
       error: import("child_process").ExecException | null,
       stdout: string,

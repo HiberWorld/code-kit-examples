@@ -40453,7 +40453,7 @@ launch: puppeteer_launch, } = puppeteer_puppeteer;
 //   console.log("Error: Watchdog triggered.");
 //   exit(1);
 // }, 60000);
-console.log(__dirname);
+const cwd = __dirname + "/..";
 const src_open = async () => {
     const browser = await esm_puppeteer_puppeteer.launch();
     const page = await browser.newPage();
@@ -40487,7 +40487,7 @@ const src_open = async () => {
 console.log("Starting up...");
 const promise = new Promise((resolve) => {
     console.log("...");
-    (0,external_child_process_namespaceObject.exec)("npm i && cd node_modules/puppeteer && npm run postinstall", (error, stdout, stderr) => {
+    (0,external_child_process_namespaceObject.exec)(`cd ${cwd} && npm i && cd ./node_modules/puppeteer && npm run postinstall`, (error, stdout, stderr) => {
         if (error) {
             console.log(`error: ${error.message}`);
             return;
@@ -40502,7 +40502,7 @@ const promise = new Promise((resolve) => {
 });
 const promise2 = new Promise((resolve) => {
     console.log("Listing");
-    (0,external_child_process_namespaceObject.exec)("pwd && ls && ls node_modules", (error, stdout, stderr) => {
+    (0,external_child_process_namespaceObject.exec)("cd ${cwd} && ls && ls node_modules && ls node_modules/puppeteer", (error, stdout, stderr) => {
         if (error) {
             console.log(`error: ${error.message}`);
             return;
