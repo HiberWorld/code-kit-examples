@@ -54,7 +54,7 @@ const promise = new Promise<void>((resolve) => {
   console.log("...");
 
   exec(
-    "cd ./node_modules/puppeteer && npm run postinstall",
+    "npm i && cd ./node_modules/puppeteer && npm run postinstall",
     (
       error: import("child_process").ExecException | null,
       stdout: string,
