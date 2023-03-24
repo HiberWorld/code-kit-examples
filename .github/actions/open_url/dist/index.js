@@ -40452,7 +40452,7 @@ launch: puppeteer_launch, } = puppeteer_puppeteer;
 setTimeout(() => {
     console.log("Error: Watchdog triggered.");
     (0,external_process_namespaceObject.exit)(1);
-}, 120000);
+}, 180000);
 const cwd = __dirname + "/..";
 const src_open = async () => {
     console.log("Opening page...");
@@ -40529,7 +40529,7 @@ const npmPromise = new Promise((resolve) => {
     // await lsPromise;
     console.log("Waiting for install...");
     await npmPromise;
-    console.log("Trying open...");
+    console.log("Opening page...");
     await src_open();
 })();
 

@@ -9,7 +9,7 @@ import * as core from "@actions/core";
 setTimeout(() => {
   console.log("Error: Watchdog triggered.");
   exit(1);
-}, 120000);
+}, 180000);
 
 const cwd = __dirname + "/..";
 
@@ -110,6 +110,6 @@ const npmPromise = new Promise<void>((resolve) => {
   console.log("Waiting for install...");
   await npmPromise;
 
-  console.log("Trying open...");
+  console.log("Opening page...");
   await open();
 })();
