@@ -1,7 +1,6 @@
-"use strict";
-exports.id = 689;
-exports.ids = [689];
-exports.modules = {
+export const id = 689;
+export const ids = [689];
+export const modules = {
 
 /***/ 1689:
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
@@ -64,4 +63,3 @@ _BrowserWebSocketTransport_ws = new WeakMap();
 /***/ })
 
 };
-;
