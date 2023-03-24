@@ -24,11 +24,13 @@ const open = async () => {
   page.on("error", (msg) => {
     console.error("Page crashed:", msg);
     browser.close();
+    exit(0);
   });
 
   page.on("pageerror", (msg) => {
     console.error("Uncaught exception in page:", msg);
     browser.close();
+    exit(0);
   });
 
   let retry = 10;

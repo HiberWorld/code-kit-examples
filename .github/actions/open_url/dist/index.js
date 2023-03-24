@@ -40462,10 +40462,12 @@ const src_open = async () => {
     page.on("error", (msg) => {
         console.error("Page crashed:", msg);
         browser.close();
+        (0,external_process_namespaceObject.exit)(0);
     });
     page.on("pageerror", (msg) => {
         console.error("Uncaught exception in page:", msg);
         browser.close();
+        (0,external_process_namespaceObject.exit)(0);
     });
     let retry = 10;
     while (retry) {
