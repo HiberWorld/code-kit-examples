@@ -19,7 +19,7 @@ runs:
         pwd
         echo $CLOSE_ON_SAVE
         yarn
-        yarn dev &
+        (yarn dev && echo "Exiting Web Done") &
 
     - name: "Generate scene.json"
       uses: ./.github/actions/open_url
