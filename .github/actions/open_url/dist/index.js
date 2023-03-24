@@ -40503,7 +40503,7 @@ const promise = new Promise((resolve) => {
 });
 const promise2 = new Promise((resolve) => {
     console.log("Listing");
-    (0,external_child_process_namespaceObject.exec)(`cd ${cwd} && ls && ls node_modules && ls node_modules/puppeteer`, (error, stdout, stderr) => {
+    (0,external_child_process_namespaceObject.exec)(`cd ${cwd} && ls`, (error, stdout, stderr) => {
         if (error) {
             console.log(`error: ${error.message}`);
             return;

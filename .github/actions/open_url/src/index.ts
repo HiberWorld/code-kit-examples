@@ -83,7 +83,7 @@ const promise2 = new Promise<void>((resolve) => {
   console.log("Listing");
 
   exec(
-    `cd ${cwd} && ls && ls node_modules && ls node_modules/puppeteer`,
+    `cd ${cwd} && ls`,
     (
       error: import("child_process").ExecException | null,
       stdout: string,
