@@ -14,10 +14,10 @@ runs:
       shell: bash
       working-directory: ./${{ inputs.world }}
       env:
-        SAVE_ON_CLOSE: true
+        CLOSE_ON_SAVE: true
       run: |
         pwd
-        echo $SAVE_ON_CLOSE
+        echo $CLOSE_ON_SAVE
         yarn
         yarn dev &
 
