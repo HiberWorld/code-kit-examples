@@ -4,10 +4,10 @@
 import { exit } from "process";
 import puppeteer from "puppeteer";
 
-setTimeout(() => {
-  console.log("Error: Watchdog triggered.");
-  exit(1);
-}, 60000);
+// setTimeout(() => {
+//   console.log("Error: Watchdog triggered.");
+//   exit(1);
+// }, 60000);
 
 const open = async () => {
   const browser = await puppeteer.launch();
@@ -28,8 +28,10 @@ const open = async () => {
   let retry = 10;
 
   while (retry) {
+    const url = "http://localhost:5173/";
+    console.log("Trying " + url);
     await page
-      .goto("http://127.0.0.1:5173/")
+      .goto(url)
       .then(() => {
         retry = 0;
       })
@@ -45,6 +47,9 @@ const open = async () => {
   }
 };
 
+console.log("Starting up...");
+
 (async () => {
+  console.log("Trying open...");
   await open();
 })();

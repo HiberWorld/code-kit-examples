@@ -5,6 +5,7 @@
       "skipLibCheck": true,
       "forceConsistentCasingInFileNames": true,
       "outDir": "dist",
+      "rootDir": "src",
 
     "moduleResolution": "Node",
       "lib": ["esnext"]
