@@ -3,8 +3,7 @@
   "version": "0.0.0",
   "description": "",
   "main": "dist/index.js",
-  "module": "es2022",
-  "target": "es2017",
+  "type": "module",
   "scripts": {
     "build": "tsc -p tsconfig.build.json"
   },
