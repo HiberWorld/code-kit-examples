@@ -10,39 +10,38 @@ inputs:
 runs:
   using: "composite"
   steps:
-    # - name: Build
-    #   shell: bash
-    #   working-directory: ./${{ inputs.world }}
-    #   env:
-    #     SAVE_ON_CLOSE: true
-    #   run: |
-    #     pwd
-    #     echo $SAVE_ON_CLOSE
-    #     yarn
-    #     yarn dev &
-    #     sleep 10
+    - name: Build
+      shell: bash
+      working-directory: ./${{ inputs.world }}
+      env:
+        SAVE_ON_CLOSE: true
+      run: |
+        pwd
+        echo $SAVE_ON_CLOSE
+        yarn
+        yarn dev &
 
     - name: "Generate scene.json"
       uses: ./.github/actions/open_url
 
-    # - name: "Upload Screenshot"
-    #   uses: actions/upload-artifact@v3
-    #   with:
-    #     name: Screenshot
-    #     path: ./${{ inputs.world }}/screenshot.png
-    #     retention-days: 5
+    - name: "Upload Screenshot"
+      uses: actions/upload-artifact@v3
+      with:
+        name: Screenshot
+        path: ./${{ inputs.world }}/screenshot.png
+        retention-days: 5
 
-    # - name: "Upload scene.json"
-    #   uses: actions/upload-artifact@v3
-    #   with:
-    #     name: Scene
-    #     path: ./${{ inputs.world }}/scene.json
-    #     retention-days: 5
+    - name: "Upload scene.json"
+      uses: actions/upload-artifact@v3
+      with:
+        name: Scene
+        path: ./${{ inputs.world }}/scene.json
+        retention-days: 5
 
-    # - name: Publish
-    #   shell: bash
-    #   working-directory: ./${{ inputs.world }}
-    #   run: |
-    #     pwd
-    #     ls
-    #     yarn upload --debug
+    - name: Publish
+      shell: bash
+      working-directory: ./${{ inputs.world }}
+      run: |
+        pwd
+        ls
+        yarn upload --debug
