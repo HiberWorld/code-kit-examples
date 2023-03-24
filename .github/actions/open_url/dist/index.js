@@ -40455,6 +40455,7 @@ launch: puppeteer_launch, } = puppeteer_puppeteer;
 // }, 60000);
 const cwd = __dirname + "/..";
 const src_open = async () => {
+    console.log("Opening page...");
     const browser = await esm_puppeteer_puppeteer.launch();
     const page = await browser.newPage();
     page.on("console", (msg) => console.log("PAGE LOG:", msg.text()));
@@ -40502,7 +40503,7 @@ const promise = new Promise((resolve) => {
 });
 const promise2 = new Promise((resolve) => {
     console.log("Listing");
-    (0,external_child_process_namespaceObject.exec)("cd ${cwd} && ls && ls node_modules && ls node_modules/puppeteer", (error, stdout, stderr) => {
+    (0,external_child_process_namespaceObject.exec)(`cd ${cwd} && ls && ls node_modules && ls node_modules/puppeteer`, (error, stdout, stderr) => {
         if (error) {
             console.log(`error: ${error.message}`);
             return;
