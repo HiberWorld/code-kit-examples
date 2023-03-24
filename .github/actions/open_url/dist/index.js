@@ -43,57 +43,12 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 exports.__esModule = true;
 var process_1 = require("process");
 var child_process_1 = require("child_process");
+var puppeteer_1 = __importDefault(require("puppeteer"));
 // setTimeout(() => {
 //   console.log("Error: Watchdog triggered.");
 //   exit(1);
 // }, 60000);
-var promise = new Promise(function (resolve) {
-    console.log("...");
-    (0, child_process_1.exec)("npm i && cd ./node_modules/puppeteer && npm run postinstall", function (error, stdout, stderr) {
-        if (error) {
-            console.log("error: ".concat(error.message));
-            return;
-        }
-        if (stderr) {
-            console.log("stderr: ".concat(stderr));
-            return;
-        }
-        console.log("stdout: ".concat(stdout));
-        resolve();
-    });
-});
-var promise2 = new Promise(function (resolve) {
-    console.log("Listing");
-    (0, child_process_1.exec)("pwd && ls && ls node_modules", function (error, stdout, stderr) {
-        if (error) {
-            console.log("error: ".concat(error.message));
-            return;
-        }
-        if (stderr) {
-            console.log("stderr: ".concat(stderr));
-            return;
-        }
-        console.log("stdout: ".concat(stdout));
-        resolve();
-    });
-});
-(function () { return __awaiter(void 0, void 0, void 0, function () {
-    return __generator(this, function (_a) {
-        switch (_a.label) {
-            case 0:
-                console.log("Waiting for install...");
-                return [4 /*yield*/, promise];
-            case 1:
-                _a.sent();
-                console.log("Waiting for listing...");
-                return [4 /*yield*/, promise2];
-            case 2:
-                _a.sent();
-                return [2 /*return*/];
-        }
-    });
-}); })();
-var puppeteer_1 = __importDefault(require("puppeteer"));
+console.log(__dirname);
 var open = function () { return __awaiter(void 0, void 0, void 0, function () {
     var browser, page, retry, url;
     return __generator(this, function (_a) {
@@ -138,13 +93,51 @@ var open = function () { return __awaiter(void 0, void 0, void 0, function () {
     });
 }); };
 console.log("Starting up...");
+var promise = new Promise(function (resolve) {
+    console.log("...");
+    (0, child_process_1.exec)("npm i && cd node_modules/puppeteer && npm run postinstall", function (error, stdout, stderr) {
+        if (error) {
+            console.log("error: ".concat(error.message));
+            return;
+        }
+        if (stderr) {
+            console.log("stderr: ".concat(stderr));
+            return;
+        }
+        console.log("stdout: ".concat(stdout));
+        resolve();
+    });
+});
+var promise2 = new Promise(function (resolve) {
+    console.log("Listing");
+    (0, child_process_1.exec)("pwd && ls && ls node_modules", function (error, stdout, stderr) {
+        if (error) {
+            console.log("error: ".concat(error.message));
+            return;
+        }
+        if (stderr) {
+            console.log("stderr: ".concat(stderr));
+            return;
+        }
+        console.log("stdout: ".concat(stdout));
+        resolve();
+    });
+});
 (function () { return __awaiter(void 0, void 0, void 0, function () {
     return __generator(this, function (_a) {
         switch (_a.label) {
             case 0:
+                console.log("Waiting for listing...");
+                return [4 /*yield*/, promise2];
+            case 1:
+                _a.sent();
+                console.log("Waiting for install...");
+                return [4 /*yield*/, promise];
+            case 2:
+                _a.sent();
                 console.log("Trying open...");
                 return [4 /*yield*/, open()];
-            case 1:
+            case 3:
                 _a.sent();
                 return [2 /*return*/];
         }

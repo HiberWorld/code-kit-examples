@@ -2,3 +2,4 @@ node_modules
 scene.json
 .env
 
+.github/actions/open_url/tsconfig.build.tsbuildinfo
