@@ -3,13 +3,12 @@
 
 import { exit } from "process";
 import puppeteer from "puppeteer";
+import { exec } from "child_process";
 
 // setTimeout(() => {
 //   console.log("Error: Watchdog triggered.");
 //   exit(1);
 // }, 60000);
-
-import { exec } from "child_process";
 
 const output = (
   error: import("child_process").ExecException | null,
@@ -27,8 +26,12 @@ const output = (
   console.log(`stdout: ${stdout}`);
 };
 
+console.log("Starting up...");
+
 exec("ls -la", output);
 exec("npm install", output);
+
+console.log("...");
 
 const open = async () => {
   const browser = await puppeteer.launch();
@@ -68,9 +71,7 @@ const open = async () => {
   }
 };
 
-console.log("Starting up...");
-
-(async () => {
-  console.log("Trying open...");
-  await open();
-})();
+// (async () => {
+//   console.log("Trying open...");
+//   await open();
+// })();
