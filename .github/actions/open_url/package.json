@@ -4,7 +4,7 @@
   "description": "",
   "main": "dist/index.js",
   "scripts": {
-    "build": "tsc -p tsconfig.build.json"
+    "build": "ncc build src/index.ts -o dist"
   },
   "devDependencies": {
     "@types/dedent": "^0.7.0",
