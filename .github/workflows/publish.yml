@@ -44,9 +44,10 @@ jobs:
         with:
           world: "example_1_hello_hiberworld"
 
-      # - uses: HiberWorld/code-kit-upload@latest
-      #   with:
-      #     world: "example_2_builder"
+      - if: steps.changes.outputs.example_2_builder == 'true'
+        uses: HiberWorld/code-kit-upload@latest
+        with:
+          world: "example_2_builder"
 
       # - uses: HiberWorld/code-kit-upload@latest
       #   with:
