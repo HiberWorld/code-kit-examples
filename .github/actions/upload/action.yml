@@ -10,7 +10,7 @@ inputs:
 runs:
   using: "composite"
   steps:
-    - name: Build
+    - name: Building ${{ inputs.world }}
       shell: bash
       working-directory: ./${{ inputs.world }}
       env:
@@ -20,16 +20,9 @@ runs:
         yarn dev &
 
     - name: "Generate scene.json"
-      uses: ./.github/actions/open_url
+      main: "dist/index.js"
 
-    # - name: "Upload scene.json"
-    #   uses: actions/upload-artifact@v3
-    #   with:
-    #     name: Scene
-    #     path: ./${{ inputs.world }}/scene.json
-    #     retention-days: 5
-
-    - name: Publish
+    - name: Publishing ${{ inputs.world }}
       shell: bash
       working-directory: ./${{ inputs.world }}
       run: |
