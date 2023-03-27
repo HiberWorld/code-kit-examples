@@ -22,7 +22,7 @@ runs:
     - name: "Generate scene.json"
       shell: bash
       run: |
-        node dist/index.js
+        node ./.github/actions/upload/dist/index.js
 
     - name: Publishing ${{ inputs.world }}
       shell: bash
