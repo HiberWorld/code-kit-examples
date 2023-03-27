@@ -20,7 +20,10 @@ runs:
         yarn dev &
 
     - name: "Generate scene.json"
-      main: "dist/index.js"
+      shell: bash
+      working-directory: ./${{ inputs.world }}
+      run: |
+        node dist/index.js
 
     - name: Publishing ${{ inputs.world }}
       shell: bash

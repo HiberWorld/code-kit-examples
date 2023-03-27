@@ -55,27 +55,27 @@ const open = async () => {
   }
 };
 
-const npmPromise = new Promise<void>((resolve) => {
-  exec(
-    `cd ${cwd} && npm i && cd ./node_modules/puppeteer && npm run postinstall`,
-    (
-      error: import("child_process").ExecException | null,
-      stdout: string,
-      stderr: string
-    ): void => {
-      if (error) {
-        console.log(`error: ${error.message}`);
-        return;
-      }
-      if (stderr) {
-        console.log(`stderr: ${stderr}`);
-        return;
-      }
-      console.log(`stdout: ${stdout}`);
-      resolve();
-    }
-  );
-});
+// const npmPromise = new Promise<void>((resolve) => {
+//   exec(
+//     `cd ${cwd} && npm i && cd ./node_modules/puppeteer && npm run postinstall`,
+//     (
+//       error: import("child_process").ExecException | null,
+//       stdout: string,
+//       stderr: string
+//     ): void => {
+//       if (error) {
+//         console.log(`error: ${error.message}`);
+//         return;
+//       }
+//       if (stderr) {
+//         console.log(`stderr: ${stderr}`);
+//         return;
+//       }
+//       console.log(`stdout: ${stdout}`);
+//       resolve();
+//     }
+//   );
+// });
 
 // const lsPromise = new Promise<void>((resolve) => {
 //   exec(
@@ -103,8 +103,8 @@ const npmPromise = new Promise<void>((resolve) => {
   // console.log("Waiting for listing...");
   // await lsPromise;
 
-  console.log("Waiting for install...");
-  await npmPromise;
+  // console.log("Waiting for install...");
+  // await npmPromise;
 
   console.log("Opening page...");
   await open();

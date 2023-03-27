@@ -22737,8 +22737,6 @@ __nccwpck_require__.r(__webpack_exports__);
 
 ;// CONCATENATED MODULE: external "process"
 const external_process_namespaceObject = require("process");
-;// CONCATENATED MODULE: external "child_process"
-const external_child_process_namespaceObject = require("child_process");
 ;// CONCATENATED MODULE: ./node_modules/puppeteer-core/lib/esm/third_party/mitt/index.js
 function mitt(n){return {all:n=n||new Map,on:function(t,e){var i=n.get(t);i?i.push(e):n.set(t,[e]);},off:function(t,e){var i=n.get(t);i&&(e?i.splice(i.indexOf(e)>>>0,1):n.set(t,[]));},emit:function(t,e){var i=n.get(t);i&&i.slice().map(function(n){n(e);}),(i=n.get("*"))&&i.slice().map(function(n){n(t,e);});}}}
 
@@ -38270,6 +38268,8 @@ Puppeteer.customQueryHandlers = CustomQueryHandler_customQueryHandlers;
 
 
 //# sourceMappingURL=common.js.map
+;// CONCATENATED MODULE: external "child_process"
+const external_child_process_namespaceObject = require("child_process");
 ;// CONCATENATED MODULE: external "fs/promises"
 const promises_namespaceObject = require("fs/promises");
 // EXTERNAL MODULE: external "http"
@@ -40448,7 +40448,6 @@ launch: puppeteer_launch, } = puppeteer_puppeteer;
 /* eslint-disable @typescript-eslint/no-loop-func */
 
 
-
 setTimeout(() => {
     console.log("Error: Watchdog triggered.");
     (0,external_process_namespaceObject.exit)(1);
@@ -40487,20 +40486,27 @@ const src_open = async () => {
         });
     }
 };
-const npmPromise = new Promise((resolve) => {
-    (0,external_child_process_namespaceObject.exec)(`cd ${cwd} && npm i && cd ./node_modules/puppeteer && npm run postinstall`, (error, stdout, stderr) => {
-        if (error) {
-            console.log(`error: ${error.message}`);
-            return;
-        }
-        if (stderr) {
-            console.log(`stderr: ${stderr}`);
-            return;
-        }
-        console.log(`stdout: ${stdout}`);
-        resolve();
-    });
-});
+// const npmPromise = new Promise<void>((resolve) => {
+//   exec(
+//     `cd ${cwd} && npm i && cd ./node_modules/puppeteer && npm run postinstall`,
+//     (
+//       error: import("child_process").ExecException | null,
+//       stdout: string,
+//       stderr: string
+//     ): void => {
+//       if (error) {
+//         console.log(`error: ${error.message}`);
+//         return;
+//       }
+//       if (stderr) {
+//         console.log(`stderr: ${stderr}`);
+//         return;
+//       }
+//       console.log(`stdout: ${stdout}`);
+//       resolve();
+//     }
+//   );
+// });
 // const lsPromise = new Promise<void>((resolve) => {
 //   exec(
 //     `cd ${cwd} && ls`,
@@ -40525,8 +40531,8 @@ const npmPromise = new Promise((resolve) => {
 (async () => {
     // console.log("Waiting for listing...");
     // await lsPromise;
-    console.log("Waiting for install...");
-    await npmPromise;
+    // console.log("Waiting for install...");
+    // await npmPromise;
     console.log("Opening page...");
     await src_open();
 })();
