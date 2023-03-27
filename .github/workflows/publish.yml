@@ -29,14 +29,15 @@ jobs:
     env:
       DEVELOPER_TOKEN: ${{ secrets.DEVELOPER_TOKEN }}
     steps:
+      - uses: actions/checkout@v3
+      - uses: ./.github/actions/restore-cache
+
       - uses: dorny/paths-filter@v2
         id: changes
         with:
           filters: |
             example_1_hello_hiberworld:
               - 'example_1_hello_hiberworld/**'
-      - uses: actions/checkout@v3
-      - uses: ./.github/actions/restore-cache
 
       - if: steps.changes.outputs.example_1_hello_hiberworld == 'true'
         uses: HiberWorld/code-kit-upload@latest
