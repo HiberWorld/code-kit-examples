@@ -21,7 +21,6 @@ runs:
 
     - name: "Generate scene.json"
       shell: bash
-      working-directory: ./${{ inputs.world }}
       run: |
         node dist/index.js
 
