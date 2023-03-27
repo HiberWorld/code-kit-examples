@@ -36,8 +36,15 @@ jobs:
         id: changes
         with:
           filters: |
+            all-assets:
+              - 'all-assets/**'
             example_1_hello_hiberworld:
               - 'example_1_hello_hiberworld/**'
+
+      - if: steps.changes.outputs.all-assets == 'true'
+        uses: HiberWorld/code-kit-upload@latest
+        with:
+          world: "all-assets"
 
       - if: steps.changes.outputs.example_1_hello_hiberworld == 'true'
         uses: HiberWorld/code-kit-upload@latest
@@ -49,10 +56,12 @@ jobs:
         with:
           world: "example_2_builder"
 
-      # - uses: HiberWorld/code-kit-upload@latest
-      #   with:
-      #     world: "example_3_game_mechanics"
+      - if: steps.changes.outputs.example_3_game_mechanics == 'true'
+        uses: HiberWorld/code-kit-upload@latest
+        with:
+          world: "example_3_game_mechanics"
 
-      # - uses: HiberWorld/code-kit-upload@latest
-      #   with:
-      #     world: "example_4_meshes_and_avatars"
+      - if: steps.changes.outputs.example_4_meshes_and_avatars == 'true'
+        uses: HiberWorld/code-kit-upload@latest
+        with:
+          world: "example_4_meshes_and_avatars"
