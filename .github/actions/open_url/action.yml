@@ -1,6 +1,0 @@
-name: "Open Url"
-description: "Opens an url"
-
-runs:
-  using: "node16"
-  main: "dist/index.js"
