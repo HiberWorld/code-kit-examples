@@ -36,18 +36,18 @@ jobs:
       - uses: actions/checkout@v3
       - uses: ./.github/actions/restore-cache
 
-      - uses: ./.github/actions/upload
+      - uses: HiberWorld/code-kit-upload@v1.0.1
         with:
           world: "example_1_hello_hiberworld"
 
-      - uses: ./.github/actions/upload
+      - uses: HiberWorld/code-kit-upload@v1.0.1
         with:
           world: "example_2_builder"
 
-      - uses: ./.github/actions/upload
+      - uses: HiberWorld/code-kit-upload@v1.0.1
         with:
           world: "example_3_game_mechanics"
 
-      - uses: ./.github/actions/upload
+      - uses: HiberWorld/code-kit-upload@v1.0.1
         with:
           world: "example_4_meshes_and_avatars"
