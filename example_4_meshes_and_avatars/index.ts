@@ -1,10 +1,8 @@
 import {
   animations,
   create,
-  HNode,
   materials,
   renderScene,
-  Scene,
 } from "@hiberworld/code-kit";
 import { builder } from "@hiberworld/code-kit-utils";
 
