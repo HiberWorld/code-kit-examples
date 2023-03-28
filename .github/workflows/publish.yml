@@ -45,7 +45,13 @@ jobs:
             example_3_game_mechanics:
               - 'example_3_game_mechanics/**'                
             example_4_meshes_and_avatars:
-              - 'example_4_meshes_and_avatars/**'
+              - 'example_4_meshes_and_avatars/**'                
+            example_5_procedural_rotation:
+              - 'example_5_procedural_rotation/**'                
+            example_6_media_and_interaction:
+              - 'example_6_media_and_interaction/**'               
+            example_7_signals:
+              - 'example_7_signals/**'
 
       - if: steps.changes.outputs.all-assets == 'true'
         uses: HiberWorld/code-kit-upload@latest
@@ -76,3 +82,13 @@ jobs:
         uses: HiberWorld/code-kit-upload@latest
         with:
           world: "example_5_procedural_rotation"
+
+      - if: steps.changes.outputs.example_6_media_and_interaction == 'true'
+        uses: HiberWorld/code-kit-upload@latest
+        with:
+          world: "example_6_media_and_interaction"
+
+      - if: steps.changes.outputs.example_7_signals == 'true'
+        uses: HiberWorld/code-kit-upload@latest
+        with:
+          world: "example_7_signals"
