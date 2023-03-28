@@ -4,8 +4,7 @@
  * See Example 1 for information about basic code structure.
  */
 
-import { create, HNode, renderScene } from "@hiberworld/code-kit";
-import { builder, inCircle, placeInCircle } from "@hiberworld/code-kit-utils";
+import { create, renderScene } from "@hiberworld/code-kit";
 
 /**
  * As always, we start by creating a root object, which is usually a ground plane.

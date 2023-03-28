@@ -1,22 +1,11 @@
-# example_1_hello_hiberworld
+# Example 3 - Game Mechanics
 
-This is a [Hiber Code-Kit](https://github.com/HiberWorld/codekit) project created using [create-hiber-world](https://github.com/HiberWorld/codekit/packages/create-hiber-world)
+This is an example world for Hiber Code-Kit showing how to use simple game mechanics.
 
-Please see [Code-Kit Docs](https://hiberworld.github.io/codekit/) for full documentation.
+Please see Code-Kit Docs for full documentation:
+https://hiberworld.github.io/codekit/
 
-Install with this command:
-
-```bash
-npm install
-```
-
-Then run with:
-
-```bash
-npm run dev
-```
-
-and enjoy the hiber experience at
-(http://localhost:5173/)
+The source code available at
+https://github.com/HiberWorld/code-kit-examples/tree/main/example_3_game_mechanics
 
 Happy coding!
