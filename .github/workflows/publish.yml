@@ -53,42 +53,50 @@ jobs:
             example_7_signals:
               - 'example_7_signals/**'
 
-      - if: steps.changes.outputs.all-assets == 'true'
+      - name: Upload 'all-assets'
+        if: steps.changes.outputs.all-assets == 'true'
         uses: HiberWorld/code-kit-upload@latest
         with:
           world: "all-assets"
 
-      - if: steps.changes.outputs.example_1_hello_hiberworld == 'true'
+      - name: Upload 'example_1_hello_hiberworld'
+        if: steps.changes.outputs.example_1_hello_hiberworld == 'true'
         uses: HiberWorld/code-kit-upload@latest
         with:
           world: "example_1_hello_hiberworld"
 
-      - if: steps.changes.outputs.example_2_builder == 'true'
+      - name: Upload 'example_2_builder'
+        if: steps.changes.outputs.example_2_builder == 'true'
         uses: HiberWorld/code-kit-upload@latest
         with:
           world: "example_2_builder"
 
-      - if: steps.changes.outputs.example_3_game_mechanics == 'true'
+      - name: Upload 'example_3_game_mechanics'
+        if: steps.changes.outputs.example_3_game_mechanics == 'true'
         uses: HiberWorld/code-kit-upload@latest
         with:
           world: "example_3_game_mechanics"
 
-      - if: steps.changes.outputs.example_4_meshes_and_avatars == 'true'
+      - name: Upload 'example_4_meshes_and_avatars'
+        if: steps.changes.outputs.example_4_meshes_and_avatars == 'true'
         uses: HiberWorld/code-kit-upload@latest
         with:
           world: "example_4_meshes_and_avatars"
 
-      - if: steps.changes.outputs.example_5_procedural_rotation == 'true'
+      - name: Upload 'example_5_procedural_rotation'
+        if: steps.changes.outputs.example_5_procedural_rotation == 'true'
         uses: HiberWorld/code-kit-upload@latest
         with:
           world: "example_5_procedural_rotation"
 
-      - if: steps.changes.outputs.example_6_media_and_interaction == 'true'
+      - name: Upload 'example_6_media_and_interaction'
+        if: steps.changes.outputs.example_6_media_and_interaction == 'true'
         uses: HiberWorld/code-kit-upload@latest
         with:
           world: "example_6_media_and_interaction"
 
-      - if: steps.changes.outputs.example_7_signals == 'true'
+      - name: Upload 'example_7_signals'
+        if: steps.changes.outputs.example_7_signals == 'true'
         uses: HiberWorld/code-kit-upload@latest
         with:
           world: "example_7_signals"

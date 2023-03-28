@@ -1,11 +1,37 @@
-import { renderScene } from '@hiberworld/code-kit';
-import { builder } from '@hiberworld/code-kit-utils';
+/**
+ * This example file shows how to use a 'builder' as an alternate way to specify objects.
+ *
+ * Builder is a part of the 'code-kit-utils' library, where you can find many useful functions.
+ *
+ * See Example 1 for information about basic code structure.
+ */
 
-const root = builder('grass_plane_01');
+import { renderScene, create } from "@hiberworld/code-kit";
+import { builder } from "@hiberworld/code-kit-utils";
 
-builder('ancient_urn_01')
+/**
+ * This example file shows how to use a 'builder' as an alternate way to specify objects.
+ *
+ * The builder is a simple wrapper around the create function, which makes it easier to chain
+ * speficifations of single properties.
+ *
+ * See also Example 1 for information about basic code structure.
+ */
+
+/**
+ * Here we use 'builder' instead of create. The resulting objects are interchangeable,
+ * so they can be used together. In this case we'll just use create to add a spawn point.
+ */
+const root = builder("grass_plane_01").add(
+  create("gpl_spawn_point_01", { x: 1, y: 1, z: -3, rotY: 180 })
+);
+
+/**
+ * See Example 6 for a more advanced use of the InfoPanel.
+ */
+builder("ancient_urn_01")
   .setTransform({ pos: [1, 2, 3] })
-  .setName('my_urn')
+  .setName("my_urn")
   .setInfoPanel({
     header: "I'm a urn",
   })
@@ -13,6 +39,6 @@ builder('ancient_urn_01')
   .addTo(root);
 
 renderScene({
-  environment: 'above_clouds_01',
+  environment: "above_clouds_01",
   root,
 });
