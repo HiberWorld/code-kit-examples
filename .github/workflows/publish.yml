@@ -40,6 +40,12 @@ jobs:
               - 'all-assets/**'
             example_1_hello_hiberworld:
               - 'example_1_hello_hiberworld/**'
+            example_2_builder:
+              - 'example_2_builder/**'            
+            example_3_game_mechanics:
+              - 'example_3_game_mechanics/**'                
+            example_4_meshes_and_avatars:
+              - 'example_4_meshes_and_avatars/**'
 
       - if: steps.changes.outputs.all-assets == 'true'
         uses: HiberWorld/code-kit-upload@latest
@@ -65,3 +71,8 @@ jobs:
         uses: HiberWorld/code-kit-upload@latest
         with:
           world: "example_4_meshes_and_avatars"
+
+      - if: steps.changes.outputs.example_5_procedural_rotation == 'true'
+        uses: HiberWorld/code-kit-upload@latest
+        with:
+          world: "example_5_procedural_rotation"
