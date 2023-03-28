@@ -34,7 +34,7 @@ root.add(
   })
 );
 
-root.add(create("gpl_spawn_point_01", { y: 1 }));
+root.add(create("gpl_spawn_point_01", { y: 1.5 }));
 
 /**
  * Instead of using prefabs, you can render meshes directly.
