@@ -7,7 +7,7 @@
  */
 
 import { renderScene, create } from "@hiberworld/code-kit";
-import { builder } from "@hiberworld/code-kit-utils";
+import { builder, RandomSeed } from "@hiberworld/code-kit-utils";
 
 /**
  * This example file shows how to use a 'builder' as an alternate way to specify objects.
@@ -17,6 +17,13 @@ import { builder } from "@hiberworld/code-kit-utils";
  *
  * See also Example 1 for information about basic code structure.
  */
+
+/**
+ * If you want to add an amount of organic variety to your scene, you can use
+ * the 'RandomSeed' random series generator. This is guaranteed to always give
+ * the same sequence of numbers, and will reset to give the same sequence on hot reload.
+ */
+const randomY = new RandomSeed(6).getValue(-4, 4);
 
 /**
  * Here we use 'builder' instead of create. The resulting objects are interchangeable,
@@ -30,7 +37,7 @@ const root = builder("grass_plane_01").add(
  * See Example 6 for a more advanced use of the InfoPanel.
  */
 builder("ancient_urn_01")
-  .setTransform({ pos: [1, 2, 3] })
+  .setTransform({ pos: [1, randomY, 3] })
   .setName("my_urn")
   .setInfoPanel({
     header: "I'm a urn",

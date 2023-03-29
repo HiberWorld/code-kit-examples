@@ -16,10 +16,10 @@ const hiberHeroImage =
 const root = create({});
 
 /**
- * Instead of using prefabs, you can render meshes directly.
- * You can even add an image to large images, like a ground plane.
  *
- * Here we add it directly to a plane to give the impression of water.
+ * As shown in Example 6, you can add image to large objects, like a ground plane.
+ *
+ * Here we add an image directly to a plane to give the impression of water.
  * The plane is upscaled to stretch into the horizon.
  *
  * This will make the image repeat.

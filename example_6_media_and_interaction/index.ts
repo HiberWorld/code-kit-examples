@@ -1,21 +1,35 @@
-import {
-  renderScene,
-  create,
-  HNode,
-  animations,
-  Vec3,
-} from "@hiberworld/code-kit";
-import { RandomSeed } from "@hiberworld/code-kit-utils";
-
-const world = create("smooth_rock_cylinder_01", { y: -1 });
-
 /**
- * If you want to add an amount of organic variety to your scene, you can use
- * the 'RandomSeed' random series generator. This is guaranteed to always give
- * the same sequence of numbers, and will reset to give the same sequence on hot reload.
+ * This example file will explain how to use external assets like web pages,
+ * meshes, videos and images.
+ *
+ * Refer to Example 1 for information about basic code structure.
  */
 
-const randomY = new RandomSeed(6).getValue(-4, 4);
+import { renderScene, create, animations, Vec3 } from "@hiberworld/code-kit";
+import { video, image } from "@hiberworld/code-kit-utils";
+
+const root = create("smooth_rock_cylinder_01", { y: -1 });
+
+/**
+ * If you just want a screen to show a video or an image on, you can use the corresponding helper.
+ */
+video({
+  url: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+  ratio: 16 / 9,
+  scale: 2,
+  y: 3,
+  x: -10,
+  z: 8,
+}).addTo(root);
+
+image({
+  url: "https://cdn.hibervr.com/static/images/collage.jpg",
+  ratio: 16 / 9,
+  scale: 2,
+  x: 8,
+  y: 3,
+  z: 8,
+}).addTo(root);
 
 /**
  * This example shows applying an image to an object.
@@ -25,13 +39,13 @@ const hiberHeroImage =
 
 const cliff = create("cliff_01_pillar", {
   transform: {
-    pos: [7, randomY, 5],
+    pos: [7, 6, 5],
   },
 
   remoteTexture: { textureUrl: hiberHeroImage },
 });
 
-world.add(cliff);
+root.add(cliff);
 
 /**
  * This can be used to bring in generated images from outside,
@@ -54,8 +68,12 @@ const signWithText = create("cube_01", {
   rotY: 0,
 });
 
-world.add(signWithText);
+root.add(signWithText);
 
+/**
+ * You can also add an 'InfoPanel' to an object, which will show a flat panel that is always facing the user.
+ * It's interactive, so pressing interaction buttons can open a web page.
+ */
 create("sign_arrow_01", {
   y: 2,
   rotY: 180,
@@ -68,9 +86,12 @@ create("sign_arrow_01", {
     isOpenInOverlayEnabled: true,
     isOpenInNewTabEnabled: true,
   },
-}).addTo(world);
+}).addTo(root);
 
-const glbDoll: HNode = {
+/**
+ * As shown in Example 4, you can bring in external GLB meshes.
+ */
+create({
   transform: { pos: [0, 4, 0] },
   glb: "https://d1a370nemizbjq.cloudfront.net/f01afd2c-e487-4309-8c5f-ef1fa6c2b59d.glb",
 
@@ -78,11 +99,13 @@ const glbDoll: HNode = {
     animationID: animations.an_default_backflip.id,
     skeletonGroupID: "skg_rpm_female",
   },
-};
+}).addTo(cliff);
 
-cliff.add(glbDoll);
+/**
+ *  Finally, we render the scene.
+ */
 
 renderScene({
-  root: world,
+  root,
   environment: "planet_01",
 });
