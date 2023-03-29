@@ -1,4 +1,4 @@
-# Example 6 - Signals
+# Example 7 - Signals
 
 This is an example world for Hiber Code-Kit showing how to use signals to trigger events by looking at objects or being in their vincinity.
 
