@@ -57,6 +57,8 @@ jobs:
               - 'oasis_world/**'            
             dragons-nest:
               - 'dragons-nest/**'
+            find-the-path:
+              - 'find-the-path/**'
 
       - name: Upload 'all-assets'
         if: steps.changes.outputs.all-assets == 'true'
@@ -117,3 +119,9 @@ jobs:
         uses: HiberWorld/code-kit-upload@latest
         with:
           world: "dragons-nest"
+
+      - name: Upload 'find-the-path'
+        if: steps.changes.outputs.find-the-path == 'true'
+        uses: HiberWorld/code-kit-upload@latest
+        with:
+          world: "find-the-path"

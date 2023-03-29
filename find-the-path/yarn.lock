@@ -345,12 +345,12 @@
   resolved "https://registry.yarnpkg.com/@hiberworld/code-kit-assets/-/code-kit-assets-1.0.8.tgz#ad2979f5e4f38eaa47b6f732fa3bcadb56f55421"
   integrity sha512-bTwNo17KT030bV8XsOvhc3rogcgm4zlBQOTVnTs2jGrX2C7UBX/+CJLmy8kbzOlBlwoBip5jyWvCihPr87L+1w==
 
-"@hiberworld/code-kit-cli@0.4.9":
-  version "0.4.1"
-  resolved "https://registry.yarnpkg.com/@hiberworld/code-kit-cli/-/code-kit-cli-0.4.1.tgz#216ea1dcda4d7fb2a40d4f4d8f7b93b8f8ad0e66"
-  integrity sha512-Ch1O2kZTICIIzEOcfK3Loepg6yCPcwqbp0otWwn+5oxnyw2v7qTAp3gQ7ela+8JP0/OpPXici0I5m2P+Fmb4WA==
+"@hiberworld/code-kit-cli@latest":
+  version "0.4.12"
+  resolved "https://registry.yarnpkg.com/@hiberworld/code-kit-cli/-/code-kit-cli-0.4.12.tgz#1a15909f463b7839349ac3261a351333199fd955"
+  integrity sha512-DmkmrwltErj87/OyhFrBT2MemUYMiYA9daxOjgp4BGttpaejUyO1hUpfVyiVGadyu1ENtRsNshxL5WK/yXjJ9Q==
   dependencies:
-    vite "^4.1.4"
+    vite "^4.2.1"
 
 "@hiberworld/code-kit-utils@latest":
   version "2.5.3"
@@ -1995,10 +1995,10 @@ validate-npm-package-license@^3.0.1:
     spdx-correct "^3.0.0"
     spdx-expression-parse "^3.0.0"
 
-vite@^4.1.4:
-  version "4.2.0"
-  resolved "https://registry.yarnpkg.com/vite/-/vite-4.2.0.tgz#d4e6eafbc034f3faf0ab376bd5b76ac15775eb99"
-  integrity sha512-AbDTyzzwuKoRtMIRLGNxhLRuv1FpRgdIw+1y6AQG73Q5+vtecmvzKo/yk8X/vrHDpETRTx01ABijqUHIzBXi0g==
+vite@^4.2.1:
+  version "4.2.1"
+  resolved "https://registry.yarnpkg.com/vite/-/vite-4.2.1.tgz#6c2eb337b0dfd80a9ded5922163b94949d7fc254"
+  integrity sha512-7MKhqdy0ISo4wnvwtqZkjke6XN4taqQ2TBaTccLIpOKv7Vp2h4Y+NpmWCnGDeSvvn45KxvWgGyb0MkHvY1vgbg==
   dependencies:
     esbuild "^0.17.5"
     postcss "^8.4.21"

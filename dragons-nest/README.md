@@ -8,6 +8,6 @@ Please see Code-Kit Docs for full documentation:
 https://hiberworld.github.io/codekit/
 
 The source code is available at
-https://github.com/HiberWorld/code-kit-examples/tree/main/oasis_world
+https://github.com/HiberWorld/code-kit-examples/tree/main/dragons-nest
 
 Happy coding!
