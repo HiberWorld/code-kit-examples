@@ -36,8 +36,6 @@ jobs:
         id: changes
         with:
           filters: |
-            all-assets:
-              - 'all-assets/**'
             example_1_hello_hiberworld:
               - 'example_1_hello_hiberworld/**'
             example_2_builder:
@@ -52,6 +50,11 @@ jobs:
               - 'example_6_media_and_interaction/**'               
             example_7_signals:
               - 'example_7_signals/**'
+
+            all-assets:
+              - 'all-assets/**'
+            oasis_world:
+              - 'oasis_world/**'
 
       - name: Upload 'all-assets'
         if: steps.changes.outputs.all-assets == 'true'
@@ -100,3 +103,9 @@ jobs:
         uses: HiberWorld/code-kit-upload@latest
         with:
           world: "example_7_signals"
+
+      - name: Upload 'oasis_world'
+        if: steps.changes.outputs.oasis_world == 'true'
+        uses: HiberWorld/code-kit-upload@latest
+        with:
+          world: "oasis_world"
