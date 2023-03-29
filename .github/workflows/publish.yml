@@ -54,7 +54,9 @@ jobs:
             all-assets:
               - 'all-assets/**'
             oasis_world:
-              - 'oasis_world/**'
+              - 'oasis_world/**'            
+            dragons-nest:
+              - 'dragons-nest/**'
 
       - name: Upload 'all-assets'
         if: steps.changes.outputs.all-assets == 'true'
@@ -109,3 +111,9 @@ jobs:
         uses: HiberWorld/code-kit-upload@latest
         with:
           world: "oasis_world"
+
+      - name: Upload 'dragons-nest'
+        if: steps.changes.outputs.dragons-nest == 'true'
+        uses: HiberWorld/code-kit-upload@latest
+        with:
+          world: "dragons-nest"
