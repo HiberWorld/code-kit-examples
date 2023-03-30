@@ -67,6 +67,8 @@ jobs:
               - 'volcano-escape/**'
             hiber-dig:
               - 'hiber-dig/**'
+            99-balloons:
+              - '99-balloons/**'
 
       - name: Upload 'all-assets'
         if: steps.changes.outputs.all-assets == 'true'
@@ -157,3 +159,9 @@ jobs:
         uses: HiberWorld/code-kit-upload@latest
         with:
           world: "hiber-dig"
+
+      - name: Upload '99-balloons'
+        if: steps.changes.outputs.99-balloons == 'true'
+        uses: HiberWorld/code-kit-upload@latest
+        with:
+          world: "99-balloons"
