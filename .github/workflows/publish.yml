@@ -59,6 +59,8 @@ jobs:
               - 'dragons-nest/**'
             find-the-path:
               - 'find-the-path/**'
+            kraken-battle:
+              - 'kraken-battle/**'
 
       - name: Upload 'all-assets'
         if: steps.changes.outputs.all-assets == 'true'
@@ -114,11 +116,17 @@ jobs:
         with:
           world: "oasis_world"
 
-      - name: Upload 'dragons-nest'
-        if: steps.changes.outputs.dragons-nest == 'true'
+      # - name: Upload 'dragons-nest'
+      #   if: steps.changes.outputs.dragons-nest == 'true'
+      #   uses: HiberWorld/code-kit-upload@latest
+      #   with:
+      #     world: "dragons-nest"
+
+      - name: Upload 'kraken-battle'
+        if: steps.changes.outputs.kraken-battle == 'true'
         uses: HiberWorld/code-kit-upload@latest
         with:
-          world: "dragons-nest"
+          world: "kraken-battle"
 
       - name: Upload 'find-the-path'
         if: steps.changes.outputs.find-the-path == 'true'

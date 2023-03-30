@@ -10,7 +10,8 @@
   "dependencies": {
     "@hiberworld/code-kit": "3.5.0",
     "@hiberworld/code-kit-cli": "0.3.2",
-    "@hiberworld/code-kit-utils": "2.2.0"
+    "@hiberworld/code-kit-utils": "2.2.0",
+    "@hiberworld/engine": "1.22.7"
   },
   "devDependencies": {
     "vite": "^4.0.4"
