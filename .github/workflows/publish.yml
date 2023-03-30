@@ -65,6 +65,8 @@ jobs:
               - 'train-stowaway/**'
             volcano-escape:
               - 'volcano-escape/**'
+            hiber-dig:
+              - 'hiber-dig/**'
 
       - name: Upload 'all-assets'
         if: steps.changes.outputs.all-assets == 'true'
@@ -149,3 +151,9 @@ jobs:
         uses: HiberWorld/code-kit-upload@latest
         with:
           world: "volcano-escape"
+
+      - name: Upload 'hiber-dig'
+        if: steps.changes.outputs.hiber-dig == 'true'
+        uses: HiberWorld/code-kit-upload@latest
+        with:
+          world: "hiber-dig"

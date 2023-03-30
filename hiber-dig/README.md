@@ -1,22 +1,13 @@
-# HiberDig
+# Hiber Dig
 
-This is a [Hiber Code-Kit](https://github.com/HiberWorld/codekit) project created using [create-hiber-world](https://github.com/HiberWorld/codekit/packages/create-hiber-world)
+This is an example world created by @Nols, showing how to generate content procedurally with Hiber Code-Kit.
 
-Please see [Code-Kit Docs](https://hiberworld.github.io/codekit/) for full documentation.
+Check out the original game here: https://hiberworld.com/world/4l-7gQu3D
 
-Install with this command:
+Please see Code-Kit Docs for full documentation:
+https://hiberworld.github.io/codekit/
 
-```bash
-npm install
-```
-
-Then run with:
-
-```bash
-npm run dev
-```
-
-and enjoy the hiber experience at
-(http://localhost:5173/)
+The source code is available at
+https://github.com/HiberWorld/code-kit-examples/tree/main/hiber-dig
 
 Happy coding!
