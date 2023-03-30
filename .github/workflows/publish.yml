@@ -61,6 +61,8 @@ jobs:
               - 'find-the-path/**'
             kraken-battle:
               - 'kraken-battle/**'
+            train-stowaway:
+              - 'train-stowaway/**'
 
       - name: Upload 'all-assets'
         if: steps.changes.outputs.all-assets == 'true'
@@ -133,3 +135,9 @@ jobs:
         uses: HiberWorld/code-kit-upload@latest
         with:
           world: "find-the-path"
+
+      - name: Upload 'train-stowaway'
+        if: steps.changes.outputs.train-stowaway == 'true'
+        uses: HiberWorld/code-kit-upload@latest
+        with:
+          world: "train-stowaway"
