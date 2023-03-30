@@ -1,22 +1,11 @@
-# code-kit-examples
+# Volcano Escape
 
-This repository contains [Hiber Code-Kit](https://github.com/HiberWorld/codekit) projects created using [create-hiber-world](https://github.com/HiberWorld/codekit/packages/create-hiber-world)
+This is an example world created by @fille1000, showing how to generate content procedurally with Hiber Code-Kit.
 
-Please see [Code-Kit Docs](https://hiberworld.github.io/codekit/) for full documentation.
+Please see Code-Kit Docs for full documentation:
+https://hiberworld.github.io/codekit/
 
-After cloning the repo, in each project directory,
-install project with this command:
-
-```bash
-npm install
-```
-
-Then run with:
-
-```bash
-npm run dev
-```
-
-and enjoy the hiber experience at the url that is shown.
+The source code is available at
+https://github.com/HiberWorld/code-kit-examples/tree/main/volcano-escape
 
 Happy coding!

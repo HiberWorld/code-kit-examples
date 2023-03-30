@@ -63,6 +63,8 @@ jobs:
               - 'kraken-battle/**'
             train-stowaway:
               - 'train-stowaway/**'
+            volcano-escape:
+              - 'volcano-escape/**'
 
       - name: Upload 'all-assets'
         if: steps.changes.outputs.all-assets == 'true'
@@ -141,3 +143,9 @@ jobs:
         uses: HiberWorld/code-kit-upload@latest
         with:
           world: "train-stowaway"
+
+      - name: Upload 'volcano-escape'
+        if: steps.changes.outputs.volcano-escape == 'true'
+        uses: HiberWorld/code-kit-upload@latest
+        with:
+          world: "volcano-escape"

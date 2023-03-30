@@ -1,9 +1,13 @@
-import { create, RandomSeed, renderScene } from "@hiberworld/code-kit";
+import { create, renderScene } from "@hiberworld/code-kit";
+import { RandomSeed } from "@hiberworld/code-kit-utils";
 
 const world = create({ y: -1 });
 
 const pipeRadius = 13;
 
+/**
+ * Change the seed to get a different random sequence
+ */
 const random = new RandomSeed(1234);
 
 create("plane_01", {
