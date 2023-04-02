@@ -1,8 +1,6 @@
-# Code-Kit Examples
+# Volcano Escape
 
-This repo contains source code for games, examples and demos created with Code-Kit.
-
-Feel free to clone the repo, and if you want anything changed or added, just open up a pull request.
+This is an example world created by @fille1000, showing how to generate content procedurally with Hiber Code-Kit.
 
 Please see Code-Kit Docs for full documentation:
 https://hiberworld.github.io/codekit/

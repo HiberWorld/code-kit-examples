@@ -11,3 +11,11 @@ It showcases multiple features of Hiber Code-Kit:
 - Portals
 
 Check out the game here: https://hiberworld.com/world/4kYI07y3Z
+
+Please see Code-Kit Docs for full documentation:
+https://hiberworld.github.io/codekit/
+
+The source code is available at
+https://github.com/HiberWorld/code-kit-examples/tree/main/kraken-battle
+
+Happy coding!

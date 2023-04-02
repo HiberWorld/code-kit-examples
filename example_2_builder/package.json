@@ -1,5 +1,5 @@
 {
-  "name": "train-stowaway",
+  "name": "example_2_builder",
   "version": "0.0.1",
   "license": "MIT",
   "private": true,
@@ -8,8 +8,8 @@
     "upload": "code-kit upload"
   },
   "dependencies": {
-    "@hiberworld/code-kit": "^3.10.1",
-    "@hiberworld/code-kit-cli": "^0.3.5",
-    "@hiberworld/code-kit-utils": "^2.4.0"
+    "@hiberworld/code-kit": "latest",
+    "@hiberworld/code-kit-cli": "latest",
+    "@hiberworld/code-kit-utils": "latest"
   }
 }
