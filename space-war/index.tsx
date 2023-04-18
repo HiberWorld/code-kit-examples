@@ -7,6 +7,7 @@ import {
   CodeKitComponent,
 } from "@hiberworld/react-code-kit";
 import { Spinning } from "@hiberworld/react-code-kit/src/components/Spinning";
+import { normalizeTransform } from "./normalizeTransform";
 
 const Tunnel: CodeKitComponent = (props) => {
   return <Prefab id="en_m_tunnel_bridge_01">{props.children}</Prefab>;
@@ -16,53 +17,79 @@ const junction = () => {
   return <Prefab id="en_m_tunnel_bridge_02"></Prefab>;
 };
 
-const World = () => {
-  // var rsd = new RandomSeed(8);
-
-  // const bridge2 = create("en_m_tunnel_bridge_01", { z: 12 }).addTo(bridge);
-  // const junction = create("en_m_tunnel_bridge_02", { z: 12 }).addTo(bridge2);
-  // const bridge4a = create("en_m_tunnel_bridge_01", { z: 12 }).addTo(junction);
-
-  // const bridge4b = create({ rotY: -90 })
-  //   .add(create("en_m_tunnel_bridge_01", { z: 12 }))
-  //   .addTo(junction);
-
-  // const bridge4c = create({ rotY: 90 })
-  //   .add(create("en_m_tunnel_bridge_01", { z: 12 }))
-  //   .addTo(junction);
-
-  // world.add(bridge);
+const Gravity = (input) => {
+  const { p, s, r, props } = normalizeTransform(input);
 
   return (
+    <HNode p={p} r={r}>
+      <Prefab id="en_m_tunnel_bridge_03" z={72} />
+      <Stack s={12} segments={{ length: 6, direction: "IN" }}>
+        <Prefab id="en_m_tunnel_bridge_01" />
+      </Stack>
+    </HNode>
+  );
+};
+const Tube = (input) => {
+  const { p, r, props } = normalizeTransform(input);
+
+  // console.log({ p, s, r, props });
+
+  return (
+    <HNode r={r} p={p}>
+      <Stack {...props} s={16} segments={{ length: 1, direction: "IN" }}>
+        <Prefab id="hiberpunk_blocks_o1_01" s={8} />
+      </Stack>
+    </HNode>
+  );
+};
+
+const World = () => {
+  return (
     <HNode>
-      <Prefab id="gpl_spawn_point_01" y={-1} />
-      <HNode rotX={90}>
-        <Stack s={12} segments={{ length: 6, direction: "UP" }} p={[0, 15, 0]}>
-          <Prefab id="hiberpunk_blocks_o1_01" rotX={90} s={6} />
-        </Stack>
+      <Prefab id="hiberpunk_decoration_disc_t1" s={6} />
+      <Prefab id="gpl_spawn_point_01" y={2} />
+
+      <HNode>
+        <Tube rotX={90} y={16} />
+        <Tube rotX={270} y={-8} />
+        <Spinning duration={100}>
+          <Gravity p={[0, 0, 19]}></Gravity>
+          <HNode showAxisMarker>
+            <Gravity rotY={180} p={[0, 0, -19]}></Gravity>
+          </HNode>
+          <Prefab
+            id="quarter_pipe_wall_01"
+            rotZ={0}
+            s={[8, 4, 8]}
+            x={13}
+            z={8}
+          />
+          <Prefab
+            id="quarter_pipe_wall_01"
+            rotZ={180}
+            s={[8, 4, 8]}
+            x={-13}
+            y={8}
+            z={8}
+          />
+          <Prefab
+            id="quarter_pipe_wall_01"
+            rotY={90}
+            s={[8, 4, 8]}
+            x={13}
+            y={0}
+            z={-8}
+          />
+          <Prefab
+            id="quarter_pipe_wall_01"
+            rotY={180}
+            s={[8, 4, 8]}
+            x={-13}
+            y={0}
+            z={-8}
+          />
+        </Spinning>
       </HNode>
-
-      <HNode rotX={270}>
-        <Stack s={12} segments={{ length: 6, direction: "UP" }} p={[0, 15, 0]}>
-          <Prefab id="hiberpunk_blocks_o1_01" rotX={90} s={6} />
-        </Stack>
-      </HNode>
-
-      <Spinning rotX={90}>
-        <Stack s={12} segments={{ length: 6, direction: "IN" }} p={[0, 0, 18]}>
-          <Prefab id="en_m_tunnel_bridge_01" />
-        </Stack>
-
-        <Prefab id="hiberpunk_blocks_o1_01" rotX={90} s={[6, 6, 8]} />
-
-        <Stack
-          s={12}
-          segments={{ length: 6, direction: "OUT" }}
-          p={[0, 0, -18]}
-        >
-          <Prefab id="en_m_tunnel_bridge_01" />
-        </Stack>
-      </Spinning>
     </HNode>
   );
 };
