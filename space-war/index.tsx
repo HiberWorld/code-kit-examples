@@ -6,25 +6,26 @@ import {
   Stack,
   CodeKitComponent,
 } from "@hiberworld/react-code-kit";
+import { Prefab as HPrefab } from "@hiberworld/code-kit";
 import { Spinning } from "@hiberworld/react-code-kit/src/components/Spinning";
 import { normalizeTransform } from "./normalizeTransform";
 
-const Tunnel: CodeKitComponent = (props) => {
-  return <Prefab id="en_m_tunnel_bridge_01">{props.children}</Prefab>;
+type GravityWellOpts = {
+  hologram: HPrefab;
 };
 
-const junction = () => {
-  return <Prefab id="en_m_tunnel_bridge_02"></Prefab>;
-};
-
-const Gravity = (input) => {
+const Gravity: CodeKitComponent<GravityWellOpts> = (input) => {
   const { p, s, r, props } = normalizeTransform(input);
+
+  const { hologram } = input;
 
   return (
     <HNode p={p} r={r}>
-      <Prefab id="en_m_tunnel_bridge_03" z={72} />
-      <Stack s={12} segments={{ length: 6, direction: "IN" }}>
-        <Prefab id="en_m_tunnel_bridge_01" />
+      <Prefab id="en_m_tunnel_bridge_03" z={45} s={[4, 1, 1]}>
+        <Prefab id={hologram} z={-5}></Prefab>
+      </Prefab>
+      <Stack s={12} segments={{ length: 4, direction: "IN" }}>
+        <Prefab id="hiberpunk_blocks_p1_01" s={[1, 1.3, 5.8]} scaleX={2} />
       </Stack>
     </HNode>
   );
@@ -36,7 +37,7 @@ const Tube = (input) => {
 
   return (
     <HNode r={r} p={p}>
-      <Stack {...props} s={16} segments={{ length: 1, direction: "IN" }}>
+      <Stack {...props} s={16} segments={{ length: 4, direction: "IN" }}>
         <Prefab id="hiberpunk_blocks_o1_01" s={8} />
       </Stack>
     </HNode>
@@ -46,17 +47,20 @@ const Tube = (input) => {
 const World = () => {
   return (
     <HNode>
-      <Prefab id="hiberpunk_decoration_disc_t1" s={6} />
-      <Prefab id="gpl_spawn_point_01" y={2} />
+      <Prefab id="hiberpunk_decoration_disc_t1" s={2} />
+      <Prefab id="gpl_spawn_point_01" y={3} />
 
-      <HNode>
-        <Tube rotX={90} y={16} />
-        <Tube rotX={270} y={-8} />
+      <HNode rotZ={90}>
+        <Tube rotX={90} y={64} />
+        <Tube rotX={270} y={-56} />
         <Spinning duration={100}>
-          <Gravity p={[0, 0, 19]}></Gravity>
-          <HNode showAxisMarker>
-            <Gravity rotY={180} p={[0, 0, -19]}></Gravity>
-          </HNode>
+          <Gravity p={[0, 0, 19]} hologram="hologram_01_hibert"></Gravity>
+          <Gravity
+            rotY={180}
+            p={[0, 0, -19]}
+            hologram="hologram_01_hibertina"
+          ></Gravity>
+
           <Prefab
             id="quarter_pipe_wall_01"
             rotZ={0}
@@ -94,4 +98,11 @@ const World = () => {
   );
 };
 
-render(<World />, { environment: "planet_01" });
+const baseUrl = "https://dao-pr.dev.hiberdev.net/engine/dev/latest/production";
+
+render(<World />, {
+  environment: "planet_01",
+
+  engineUrl: `${baseUrl}/hiber.js`,
+  wasmUrl: `${baseUrl}/Hiberworld.wasm.gz`,
+});
