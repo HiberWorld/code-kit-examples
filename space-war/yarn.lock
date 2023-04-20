@@ -347,11 +347,6 @@
   dependencies:
     property-graph "^1.1.0"
 
-"@hiberworld/code-kit-assets@^1.2.0":
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/@hiberworld/code-kit-assets/-/code-kit-assets-1.2.0.tgz#3202dee4e1005be840d32397ae7a60fead57cb92"
-  integrity sha512-yCEAXgv1Kb0bg7jcbUGxE8IZasp0f6VDeY/IcB9q6O/8q3zoE/Ay0Fq4thOAELIoBHO/bJo+wHKtTE/nnmuRhg==
-
 "@hiberworld/code-kit-assets@^1.2.2":
   version "1.2.2"
   resolved "https://registry.yarnpkg.com/@hiberworld/code-kit-assets/-/code-kit-assets-1.2.2.tgz#d22f050fe92082141e297fc96548bc4887d1089d"
@@ -364,28 +359,19 @@
   dependencies:
     vite "^4.2.1"
 
-"@hiberworld/code-kit-utils@^2.6.3":
-  version "2.6.3"
-  resolved "https://registry.yarnpkg.com/@hiberworld/code-kit-utils/-/code-kit-utils-2.6.3.tgz#2d8df83005c1109c84398c2715ead770ea102267"
-  integrity sha512-P0av570PedFI3O/JoeNYY7+E9ZOW4drW9ZRUjFexr4usZV49Ufbl1WltTEfpuZGL5CvY7IxRYuLpbHfDM+CEuw==
+"@hiberworld/code-kit-utils@^2.6.9":
+  version "2.6.9"
+  resolved "https://registry.yarnpkg.com/@hiberworld/code-kit-utils/-/code-kit-utils-2.6.9.tgz#e81438adf2c1b73ff24bbf383e86f5c607750bc2"
+  integrity sha512-dd5+ailZqRpQ1GE+RWRMxrd1NNL2P97HxxMyi58FooyTP1caT7rVn5fP8G/v+pAioHTGLH4WsoJSGHgHjUwEyg==
   dependencies:
-    "@hiberworld/code-kit" "^3.17.0"
+    "@hiberworld/code-kit" "^3.17.6"
     add "^2.0.6"
     lodash-es "^4.17.21"
 
-"@hiberworld/code-kit-utils@^2.6.7":
-  version "2.6.7"
-  resolved "https://registry.yarnpkg.com/@hiberworld/code-kit-utils/-/code-kit-utils-2.6.7.tgz#1ff4e129e4ba6bfab82b1cd58f6161def65987c6"
-  integrity sha512-NoYu0mKShP34HBh7wydF+sBET9YqgvVtydyfyqQ3dXhuOaUs6zzSY9o6Z8nl7sCRN5uOXTkPdl1vcKo+atFHuw==
-  dependencies:
-    "@hiberworld/code-kit" "^3.17.4"
-    add "^2.0.6"
-    lodash-es "^4.17.21"
-
-"@hiberworld/code-kit@3.17.4", "@hiberworld/code-kit@^3.17.4":
-  version "3.17.4"
-  resolved "https://registry.yarnpkg.com/@hiberworld/code-kit/-/code-kit-3.17.4.tgz#72a05af65fc92db22e6d8984146d5433abacbef4"
-  integrity sha512-dSX20duP5UlQmBGLfk9XK7qU3jtBXq3jEEs9Zv2p2LkywJ4GBY0PY37KBHHhtAqW7jbSyA+iwmnOqKGmzJcR+A==
+"@hiberworld/code-kit@3.17.6", "@hiberworld/code-kit@^3.17.6":
+  version "3.17.6"
+  resolved "https://registry.yarnpkg.com/@hiberworld/code-kit/-/code-kit-3.17.6.tgz#f18b77803da9b0108c869e35f08ee1374222d732"
+  integrity sha512-9xeMKXjxuZ+XPy9dAhtiDYZdOPNOiFxnG+tO8JkoFzPhJ69l1gB9KIdggZaGWIjHMbo3q8/h0oDjyQGl/pVkOw==
   dependencies:
     "@changesets/cli" "^2.26.1"
     "@hiberworld/code-kit-assets" "^1.2.2"
@@ -397,38 +383,18 @@
     nanoid "^4.0.2"
     ts-xor "^1.1.0"
 
-"@hiberworld/code-kit@^3.17.0":
-  version "3.17.0"
-  resolved "https://registry.yarnpkg.com/@hiberworld/code-kit/-/code-kit-3.17.0.tgz#55ba45a4c23f9f274b4b396c5cd4b36822b14110"
-  integrity sha512-kqunYVDYw3Egw4nE4rNDPKkalWp3JzBSqeRO7WfGQy8tYgTQcHwvtH6nHBGti7zuI/x7TzOBI/Mq0s9PsbOhnQ==
-  dependencies:
-    "@changesets/cli" "^2.26.1"
-    "@hiberworld/code-kit-assets" "^1.2.0"
-    "@hiberworld/engine" "^1.27.1"
-    "@types/clone-deep" "^4.0.1"
-    clone-deep "^4.0.1"
-    gl-matrix "^3.4.3"
-    lodash-es "^4.17.21"
-    nanoid "^4.0.2"
-    ts-xor "^1.1.0"
-
-"@hiberworld/engine@^1.27.1":
-  version "1.27.1"
-  resolved "https://registry.yarnpkg.com/@hiberworld/engine/-/engine-1.27.1.tgz#46d8a8da885c9da8fb6ef6f6d43e57ed28ae15bc"
-  integrity sha512-OZurg06zjd3IouUSWNZzlq9pABiNYAZk65ktNqoET0assmsyVA529NYZjJJmCO02RU5sWvTlWi7Z/uCkwUhsxg==
-
 "@hiberworld/engine@^1.28.0":
   version "1.28.0"
   resolved "https://registry.yarnpkg.com/@hiberworld/engine/-/engine-1.28.0.tgz#102b797f8e48eef03328566dd78cc3c68a5a48f4"
   integrity sha512-7IafARuUeOJf4lwzQwwuPIWB7IQQb6iaJEU75crnigrL3amW3g0q4W0wjfgupdhwgfqv/l5GFrWsCb6L03s+DA==
 
-"@hiberworld/react-code-kit@^0.1.3":
-  version "0.1.3"
-  resolved "https://registry.yarnpkg.com/@hiberworld/react-code-kit/-/react-code-kit-0.1.3.tgz#9b3a53b93b784ded12aee3dffcccdd1e7fd4f4c3"
-  integrity sha512-nSKAZIvqDhjCsWNl/0CZZJ0LaKyhrfAuAMQGV40CwTvpLBatdG4wlorMRSAfCaoapYZUsFqKHYFIRFRnYTnS+A==
+"@hiberworld/react-code-kit@^0.2.3":
+  version "0.2.3"
+  resolved "https://registry.yarnpkg.com/@hiberworld/react-code-kit/-/react-code-kit-0.2.3.tgz#339bbec66e224582849c868928233d3b35ab7f22"
+  integrity sha512-PmLoMC2nKz3KEv69uqqlPs9irDwXf3kcFy0Kjch9rJfenrK00I+wjwZRMVfFvajgEqlvT2sDi/SoqnL2yG/4pw==
   dependencies:
-    "@hiberworld/code-kit" "3.17.4"
-    "@hiberworld/code-kit-utils" "^2.6.7"
+    "@hiberworld/code-kit" "3.17.6"
+    "@hiberworld/code-kit-utils" "^2.6.9"
     react "^18.2.0"
     react-reconciler "^0.29.0"
 

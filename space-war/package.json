@@ -9,10 +9,10 @@
   },
   "dependencies": {
     "@gltf-transform/core": "^3.1.2",
-    "@hiberworld/code-kit": "^3.17.0",
+    "@hiberworld/code-kit": "^3.17.6",
     "@hiberworld/code-kit-cli": "^0.4.12",
-    "@hiberworld/code-kit-utils": "^2.6.3",
-    "@hiberworld/react-code-kit": "^0.1.3",
+    "@hiberworld/code-kit-utils": "^2.6.9",
+    "@hiberworld/react-code-kit": "^0.2.3",
     "react": "^18.2.0"
   }
 }
