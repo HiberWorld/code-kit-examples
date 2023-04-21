@@ -19,6 +19,7 @@ import { normalizeTransform } from "./normalizeTransform";
 import { Containers } from "./Containers";
 import { RampedGrid } from "./RampedGrid";
 import { Hub } from "./Hub";
+import { Sentinels } from "./Sentinels";
 
 const Tube: CodeKitComponent<{ length: number }> = (input) => {
   const { p, r, props } = normalizeTransform(input);
@@ -38,34 +39,6 @@ const Tube: CodeKitComponent<{ length: number }> = (input) => {
   );
 };
 
-const Orb = (props: {
-  y: number;
-  z: number;
-  startAt: number;
-  duration: number;
-}) => {
-  return (
-    <HNode
-      y={props.y}
-      z={props.z}
-      animation={{
-        x: [-60, -30, 0, 30, 60, 100],
-        duration: props.duration,
-        loop: "REVERSE",
-        startAt: props.startAt,
-        easing: "LINEAR",
-      }}
-    >
-      <Spinning axis="y">
-        <Hovering magnitude={5}>
-          <Prefab id="glowing_orb_01" s={[1, 1, 1]} />
-          <Prefab id="torus_thin_01" s={[1, 1, 1]} />
-        </Hovering>
-      </Spinning>
-    </HNode>
-  );
-};
-
 const World = () => {
   return (
     <HNode s={1}>
@@ -74,19 +47,10 @@ const World = () => {
       </Prefab>
       {/* <Prefab id="fx_particlesystem_mist_02" s={[60, 10, 10]} /> */}
 
-      {/* <Orb y={0} z={0} startAt={0} duration={2} />
-      <Orb y={1} z={10} startAt={2} duration={3} />
-      <Orb y={-1} z={-10} startAt={4} duration={3.5} />
-      <Orb y={4} z={5} startAt={3} duration={1.5} />
-      <Orb y={5} z={-5} startAt={4} duration={5} />
-      <Orb y={-4} z={-10} startAt={5} duration={6} />
-      <Orb y={-10} z={0} startAt={0} duration={2} />
-      <Orb y={-10} z={-6} startAt={1} duration={8} />
-      <Orb y={10} z={-6} startAt={2} duration={1.3} /> */}
-
       <HNode>
         <Tube length={8}>
           <Hub />
+          <Sentinels />
           {/* <Prefab id="torus_thick_01" rotX={90} s={40} z={-20} />
           <Prefab id="torus_thin_01" rotX={90} s={52} z={-20} /> */}
           {/* <HNode rotX={90} rotY={180} z={0}>
