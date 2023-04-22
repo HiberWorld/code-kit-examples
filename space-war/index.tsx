@@ -22,43 +22,17 @@ import { Hub } from "./Hub";
 import { Sentinels } from "./Sentinels";
 import { StarshipHiberion } from "./StarshipHiberion";
 
-const spaceship = "hiberpunk_decoration_disc_t1" as HPrefab; // spaceship_01
-
 const World = () => {
   return (
     <HNode>
-      {/* <StarshipHiberion /> */}
-
-      <HNode x={200}>
-        <Prefab id={spaceship} s={2}>
-          <Prefab id="gpl_spawn_point_01" y={2} rotY={90} />
-        </Prefab>
-
-        <Prefab
-          id="cube_01"
-          z={3}
-          x={-10}
-          signalSource={{
-            id: "source1",
-            lookAtSensor: true,
-            playerProximitySensor: { maxDistance: 5 },
-          }}
-        />
-        <Prefab
-          id="rock_cube_01_t1"
-          z={-3}
-          x={-10}
-          signalListener={{
-            target: "source1",
-            invisibleOnSignal: true,
-          }}
-          signalSource={{
-            id: "source2",
-            lookAtSensor: true,
-            playerProximitySensor: { maxDistance: 5 },
-          }}
-        />
-      </HNode>
+      <StarshipHiberion />
+      {/* <Stack
+        dim={4}
+        segments={{ length: 4, direction: "IN" }}
+        renderItem={() => <Prefab id="cube_01" />}
+      >
+        <Prefab id="cactus_01" p={[0, 2, 0]} />
+      </Stack> */}
     </HNode>
   );
 };

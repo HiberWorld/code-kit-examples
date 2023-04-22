@@ -47,11 +47,11 @@ const Axis = (props) => {
   );
 };
 
-export const Hub = () => (
+export const Hub: CodeKitComponent = (props) => (
   <Spinning duration={100} r={[90, 0, 0]} p={[0, 0, -16]}>
     <GravityWell p={[0, 0, 30]} hologram="hologram_01_hibert"></GravityWell>
     <GravityWell
-      rotY={180}
+      r={[0, 180, 0]}
       p={[0, 0, -30]}
       hologram="hologram_01_hibertina"
     ></GravityWell>
