@@ -40,7 +40,7 @@ const Tube: CodeKitComponent<{ length: number }> = (input) => {
 };
 
 export const StarshipHiberion = (props: {}) => (
-  <HNode s={0.3}>
+  <HNode s={0.5}>
     {/* <Prefab id="fx_particlesystem_mist_02" s={[60, 10, 10]} /> */}
     <HNode>
       <Prefab
@@ -54,9 +54,7 @@ export const StarshipHiberion = (props: {}) => (
         <Hub />
         <Tube length={8} p={[0, 0, -20]}>
           <Sentinels />
-          <Prefab id="hiberpunk_decoration_disc_t1" s={2}>
-            <Prefab id="gpl_spawn_point_01" y={1} />
-          </Prefab>
+
           <Prefab id="torus_thick_01" rotX={90} s={40} z={-20} />
           <Prefab id="torus_thin_01" rotX={90} s={52} z={-20} />
           <HNode p={[0, 0, -140]}>
@@ -95,12 +93,47 @@ export const StarshipHiberion = (props: {}) => (
                       />
                     )}
                   />
+                  <Prefab
+                    dealDamageOnTouch={{
+                      amount: 10,
+                      knockbackStrengthInProcent: 0,
+                    }}
+                    visibility="never"
+                    id="plane_01"
+                    s={[10, 10, 40]}
+                    p={[0, -52, 0]}
+                  />
+                  <HNode p={[0, -35.2, 50]}>
+                    <Distribute
+                      outerBoundRadius={35}
+                      gapFreq={0.7}
+                      gapMax={4}
+                      gapMin={2}
+                      spaceMax={13}
+                      spaceMin={12}
+                      gladeRadius={12}
+                      renderItem={(item) => (
+                        <Prefab
+                          x={item.x}
+                          z={item.z}
+                          id="glowing_mushroom"
+                          s={[2, 1, 2]}
+                        />
+                      )}
+                    ></Distribute>
+                  </HNode>
+                  <Prefab
+                    id="water_plane_01"
+                    s={[10, 10, 40]}
+                    p={[0, -50, 0]}
+                  />
+
+                  <HNode x={0} z={40}>
+                    <Prefab id="hiberpunk_decoration_disc_t1" s={2}>
+                      <Prefab id="gpl_spawn_point_01" y={2} rotY={180} />
+                    </Prefab>
+                  </HNode>
                   <HNode z={0}>
-                    {/* <HNode x={100}>
-                      <Prefab id="hiberpunk_decoration_disc_t1" s={2}>
-                        <Prefab id="gpl_spawn_point_01" y={2} rotY={90} />
-                      </Prefab>
-                    </HNode> */}
                     <HNode r={[-90, 0, 0]}>
                       <Prefab id="candles_01" s={[100, 100, 80]} />
                       <Prefab id="candles_01" s={[75, 50, 50]} rotY={90} />
@@ -111,10 +144,6 @@ export const StarshipHiberion = (props: {}) => (
             </HNode>
           </HNode>
           <Platform />
-
-          {/* <Prefab id="hiberpunk_decoration_disc_t1" s={2}>
-          <Prefab id="gpl_spawn_point_01" y={1} />
-        </Prefab> */}
         </Tube>
       </Tube>
     </HNode>
