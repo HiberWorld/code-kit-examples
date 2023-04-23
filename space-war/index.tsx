@@ -33,6 +33,7 @@ const speed = 8;
 const World = () => {
   return (
     <HNode>
+      <StarshipHiberion />
       <HNode keyframeAnimated={keyframeAnimated}>
         <HNode
           keyframe={{ easing: "EASE_IN_OUT_CUBIC", timestamp: 0 }}
@@ -56,9 +57,7 @@ const World = () => {
           }}
           r={[-90, 0, 0]}
         />
-        <HNode p={[0, 0, 140]}>
-          <StarshipHiberion />
-        </HNode>
+        <HNode p={[0, 0, 140]}></HNode>
       </HNode>
       {/* <Stack
         dim={4}
