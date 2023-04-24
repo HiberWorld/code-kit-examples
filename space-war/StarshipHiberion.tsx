@@ -12,6 +12,7 @@ import {
   Spinning,
   InCircle,
   CodeKitComponent,
+  RandomProvider,
 } from "@hiberworld/react-code-kit";
 
 import { Containers } from "./Containers";
@@ -20,6 +21,7 @@ import { Hub } from "./Hub";
 import { Sentinels } from "./Sentinels";
 import { Platform } from "./Platform";
 import { RoofWalkway } from "./RoofWalkway";
+import { Fish } from "./Fish";
 
 const Tube: CodeKitComponent<{ length: number }> = (input) => {
   const { p, r, children, ...props } = input;
@@ -124,16 +126,33 @@ export const StarshipHiberion = (props: {}) => (
                   </HNode>
                   <Prefab
                     id="water_plane_01"
-                    s={[10, 10, 40]}
-                    p={[0, -50, 0]}
+                    s={[10, 10, 18]}
+                    p={[0, -50, 65]}
                   />
 
+                  <HNode p={[0, -32, -10]}>
+                    <Fish dim={[10, 0, 120]} />
+                    <Fish dim={[15, 0, 120]} />
+                    <Fish dim={[20, 0, 120]} />
+                    <Fish dim={[15, 0, 120]} />
+                    <Fish dim={[10, 0, 120]} />
+                    <Fish dim={[20, 0, 120]} />
+                    <Fish dim={[15, 0, 120]} />
+                    <Fish dim={[20, 0, 120]} />
+                  </HNode>
+                  <RandomProvider seed={1}>
+                    <HNode p={[0, -26, 60]}>
+                      <Fish s={8} dim={[10, 0, 10]} />
+                    </HNode>
+                  </RandomProvider>
                   <HNode x={0} z={40}>
                     <Prefab id="hiberpunk_decoration_disc_t1" s={2}>
                       <Prefab id="gpl_spawn_point_01" y={2} rotY={180} />
                     </Prefab>
                   </HNode>
-                  <HNode z={0}>
+                  <HNode z={10}>
+                    <Prefab id="torus_thick_01" rotX={90} s={40} z={-20} />
+                    <Prefab id="torus_thin_01" rotX={90} s={52} z={-20} />
                     <HNode r={[-90, 0, 0]}>
                       <Prefab id="candles_01" s={[100, 100, 80]} />
                       <Prefab id="candles_01" s={[75, 50, 50]} rotY={90} />

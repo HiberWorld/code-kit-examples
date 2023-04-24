@@ -24,6 +24,7 @@ import { RampedGrid } from "./RampedGrid";
 import { Hub } from "./Hub";
 import { Sentinels } from "./Sentinels";
 import { StarshipHiberion } from "./StarshipHiberion";
+import { Fish } from "./Fish";
 
 const keyframeAnimated = { loopBehaviour: "REVERSE" as LoopBehaviour };
 
@@ -34,31 +35,7 @@ const World = () => {
   return (
     <HNode>
       <StarshipHiberion />
-      <HNode keyframeAnimated={keyframeAnimated}>
-        <HNode
-          keyframe={{ easing: "EASE_IN_OUT_CUBIC", timestamp: 0 }}
-          r={[0, 0, 0]}
-        />
-        <HNode
-          keyframe={{ easing: "EASE_IN_OUT_CUBIC", timestamp: pause }}
-          r={[0, 0, 0]}
-        />
-        <HNode
-          keyframe={{
-            easing: "EASE_IN_OUT_CUBIC",
-            timestamp: pause + 2 * speed,
-          }}
-          r={[-90, 0, 0]}
-        />
-        <HNode
-          keyframe={{
-            easing: "EASE_IN_OUT_CUBIC",
-            timestamp: pause + 2 * speed + 2,
-          }}
-          r={[-90, 0, 0]}
-        />
-        <HNode p={[0, 0, 140]}></HNode>
-      </HNode>
+
       {/* <Stack
         dim={4}
         segments={{ length: 4, direction: "IN" }}
@@ -73,7 +50,7 @@ const World = () => {
 const baseUrl = "https://dao-pr.dev.hiberdev.net/engine/dev/latest/production";
 
 render(<World />, {
-  environment: "hiberpunk_bloom_01",
+  environment: "planet_01",
   //starry_night_01
   //planet_01
   //dark_city_night_01
