@@ -12,6 +12,7 @@ import { Prefab as HPrefab, Scale3, scaleToVec3 } from "@hiberworld/code-kit";
 
 type FishOptions = {
   dim?: Scale3;
+  speed?: number;
 };
 
 const quadrants = [
@@ -22,7 +23,7 @@ const quadrants = [
 ];
 
 export const Fish: CodeKitComponent<FishOptions> = (input) => {
-  const { dim, ...props } = input;
+  const { dim, speed = 5, ...props } = input;
 
   const random = useRandom();
 
@@ -69,7 +70,7 @@ export const Fish: CodeKitComponent<FishOptions> = (input) => {
         pointlight={{
           color: "aquamarine",
           strength: 40,
-          offset: [0, 2, 0],
+          offset: [0, 3, 0],
           radius: 4,
         }}
         animation={{
@@ -79,7 +80,7 @@ export const Fish: CodeKitComponent<FishOptions> = (input) => {
           loop: "RESTART",
           easing: "EASE_IN_OUT_QUAD",
           startAt: step,
-          steps: [10, 15, 20, 25, 30],
+          steps: [speed * 2, speed * 3, speed * 4, speed * 5, speed * 6],
         }}
       />
     </Hovering>
