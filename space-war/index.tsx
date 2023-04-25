@@ -33,11 +33,11 @@ const speed = 8;
 
 const World = () => {
   return (
-    <HNode>
+    <HNode rotX={-90}>
       <StarshipHiberion />
 
       {/* <Stack
-        dim={4}
+        dim={5}
         segments={{ length: 4, direction: "IN" }}
         renderItem={() => <Prefab id="cube_01" />}
       >
