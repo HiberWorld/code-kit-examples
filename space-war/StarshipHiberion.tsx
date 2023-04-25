@@ -22,7 +22,7 @@ import { Sentinels } from "./Sentinels";
 import { Platform } from "./Platform";
 import { RoofWalkway } from "./RoofWalkway";
 import { Fish } from "./Fish";
-import { Mist } from "./Mist";
+import { Djungle } from "./Djungle";
 
 const Tube: CodeKitComponent<{ length: number }> = (input) => {
   const { p, r, children, ...props } = input;
@@ -43,11 +43,8 @@ const Tube: CodeKitComponent<{ length: number }> = (input) => {
 };
 
 export const StarshipHiberion = (props: {}) => {
-  const fishSpeed = 5;
-
   return (
     <HNode s={0.5}>
-      {/* <Prefab id="fx_particlesystem_mist_02" s={[60, 10, 10]} /> */}
       <HNode>
         <Prefab
           id="en_m_hiberpunk_building_01_top"
@@ -60,7 +57,6 @@ export const StarshipHiberion = (props: {}) => {
           <Hub />
           <Tube length={8} p={[0, 0, -20]}>
             <Sentinels />
-
             <Prefab id="torus_thick_01" rotX={90} s={40} z={-20} />
             <Prefab id="torus_thin_01" rotX={90} s={52} z={-20} />
             <HNode p={[0, 0, -140]}>
@@ -76,13 +72,11 @@ export const StarshipHiberion = (props: {}) => {
                     id="hiberpunk_blocks_m1_01"
                   />
                 )}
-              />
+              ></InCircle>
               <HNode z={-10}>
                 <Prefab id="torus_thick_01" rotX={90} s={40} />
                 <Prefab id="torus_thin_01" rotX={90} s={52} />
                 <Tube length={8}>
-                  <RoofWalkway />
-
                   <Prefab id="torus_thick_01" rotX={90} s={40} z={-20} />
                   <Prefab id="torus_thin_01" rotX={90} s={52} z={-20} />
                   <HNode p={[0, 0, -140]}>
@@ -98,58 +92,10 @@ export const StarshipHiberion = (props: {}) => {
                           id="hiberpunk_blocks_m1_01"
                         />
                       )}
-                    />
-                    <Prefab
-                      dealDamageOnTouch={{
-                        amount: 10,
-                        knockbackStrengthInProcent: 0,
-                      }}
-                      visibility="never"
-                      id="plane_01"
-                      s={[10, 10, 40]}
-                      p={[0, -52, 0]}
-                    />
-                    <HNode p={[0, -35.2, 50]}>
-                      <Distribute
-                        outerBoundRadius={35}
-                        gapFreq={0.7}
-                        gapMax={4}
-                        gapMin={2}
-                        spaceMax={13}
-                        spaceMin={12}
-                        gladeRadius={12}
-                        renderItem={(item) => (
-                          <Prefab
-                            x={item.x}
-                            z={item.z}
-                            id="glowing_mushroom"
-                            s={[2, 1, 2]}
-                          />
-                        )}
-                      ></Distribute>
-                    </HNode>
-                    <Prefab
-                      id="water_plane_01"
-                      s={[10, 10, 18]}
-                      p={[0, -50, 65]}
-                    />
-                    <Mist p={[0, -32, 60]} />
-                    <HNode p={[0, -31.2, 0]}>
-                      <Fish dim={[10, 0, 120]} speed={fishSpeed} />
-                      <Fish dim={[10, 0, 120]} speed={fishSpeed} />
-                      <Fish dim={[10, 0, 120]} speed={fishSpeed} />
-                      <Fish dim={[10, 0, 120]} speed={fishSpeed} />
-                      <Fish dim={[10, 0, 120]} speed={fishSpeed} />
-                      <Fish dim={[10, 0, 120]} speed={fishSpeed} />
-                      <Fish dim={[10, 0, 120]} speed={fishSpeed} />
-                      <Fish dim={[10, 0, 120]} speed={fishSpeed} />
-                    </HNode>
-                    <Random seed={1}>
-                      <HNode p={[-33, -26, 65]}>
-                        <Fish s={8} dim={[10, 0, 11]} speed={fishSpeed} />
-                      </HNode>
-                    </Random>
-                    <HNode x={0} z={40}>
+                    ></InCircle>
+                    <Djungle />
+                    <RoofWalkway p={[64, 10, 18.2]} />
+                    <HNode x={0} y={0} z={40}>
                       <Prefab id="hiberpunk_decoration_disc_t1" s={2}>
                         <Prefab id="gpl_spawn_point_01" y={2} rotY={180} />
                       </Prefab>

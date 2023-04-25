@@ -50,7 +50,7 @@ const World = () => {
 const baseUrl = "https://dao-pr.dev.hiberdev.net/engine/dev/latest/production";
 
 render(<World />, {
-  environment: "starry_night_01",
+  environment: "planet_01",
   //starry_night_01
   //planet_01
   //dark_city_night_01

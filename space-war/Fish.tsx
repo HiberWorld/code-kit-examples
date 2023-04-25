@@ -47,8 +47,6 @@ export const Fish: CodeKitComponent<FishOptions> = (input) => {
 
   z.push(z[0]);
 
-  console.log({ x, z });
-
   const step = random.int(0, z.length - 1);
 
   return (
@@ -69,9 +67,9 @@ export const Fish: CodeKitComponent<FishOptions> = (input) => {
         }}
         pointlight={{
           color: "aquamarine",
-          strength: 40,
-          offset: [0, 3, 0],
-          radius: 4,
+          strength: 20,
+          offset: [0, 0, 0],
+          radius: 8,
         }}
         animation={{
           x,

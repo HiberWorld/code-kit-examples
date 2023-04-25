@@ -7,10 +7,10 @@ import {
   Grid,
 } from "@hiberworld/react-code-kit";
 
-export const RoofWalkway: CodeKitComponent = (input) => (
-  <HNode p={[10, 0, 50]}>
+export const RoofWalkway: CodeKitComponent = (props) => (
+  <HNode {...props}>
     <Grid
-      rows={20}
+      rows={16}
       columns={1}
       itemSpacing={8}
       children={(row, column) => {
