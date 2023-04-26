@@ -23,6 +23,7 @@ import { Platform } from "./Platform";
 import { RoofWalkway } from "./RoofWalkway";
 import { Fish } from "./Fish";
 import { Djungle } from "./Djungle";
+import { MeatGrinder } from "./MeatGrinder";
 
 const Tube: CodeKitComponent<{ length: number }> = (input) => {
   const { p, r, children, ...props } = input;
@@ -73,43 +74,20 @@ export const StarshipHiberion = (props: {}) => {
                   />
                 )}
               ></InCircle>
-              <HNode x={0} y={0} rotX={90}>
-                <Spinning duration={60}>
-                  <Stack
-                    dim={7}
-                    segments={[{ length: 8, direction: "DOWN" }]}
-                    renderItem={() => (
-                      <Grid
-                        rows={5}
-                        columns={5}
-                        itemSpacing={4}
-                        children={({ row, column }) => {
-                          return (
-                            <Prefab
-                              id={
-                                row % 2
-                                  ? "rounded_cylinder_01"
-                                  : "rounded_cylinder_02"
-                              }
-                              y={3 * ((row + column) % 3)}
-                              s={[1.2, 0.8, 1.2]}
-                            />
-                          );
-                        }}
-                      />
-                    )}
-                  ></Stack>
-                </Spinning>
-              </HNode>
-              <HNode x={0} y={0} z={40}>
-                <Prefab id="hiberpunk_decoration_disc_t1" s={2}>
-                  <Prefab id="gpl_spawn_point_01" y={2} rotY={0} />
-                </Prefab>
-              </HNode>
+
+              <MeatGrinder x={0} y={0} rotX={90} />
+
               <HNode z={-10}>
                 <Prefab id="torus_thick_01" rotX={90} s={40} />
                 <Prefab id="torus_thin_01" rotX={90} s={52} />
                 <Tube length={4}>
+                  <Prefab
+                    id="rounded_cylinder_01"
+                    rotX={90}
+                    s={[8, 1, 8]}
+                    z={-3}
+                  />
+
                   <Prefab id="torus_thick_01" rotX={90} s={40} z={-20} />
                   <Prefab id="torus_thin_01" rotX={90} s={52} z={-20} />
                   <HNode p={[0, 0, -140]}>
@@ -128,7 +106,11 @@ export const StarshipHiberion = (props: {}) => {
                     ></InCircle>
                     <Djungle />
                     <RoofWalkway p={[64, 10, 18.2]} />
-
+                    <HNode x={0} y={0} z={40}>
+                      <Prefab id="hiberpunk_decoration_disc_t1" s={2}>
+                        <Prefab id="gpl_spawn_point_01" y={2} rotY={0} />
+                      </Prefab>
+                    </HNode>
                     <HNode z={10}>
                       <Prefab id="torus_thick_01" rotX={90} s={40} z={-20} />
                       <Prefab id="torus_thin_01" rotX={90} s={52} z={-20} />

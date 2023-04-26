@@ -33,7 +33,7 @@ const speed = 8;
 
 const World = () => {
   return (
-    <HNode rotX={-90}>
+    <HNode rotX={-90 + 90}>
       <StarshipHiberion />
 
       {/* <Stack
@@ -50,7 +50,7 @@ const World = () => {
 const baseUrl = "https://dao-pr.dev.hiberdev.net/engine/dev/latest/production";
 
 render(<World />, {
-  environment: "planet_01",
+  environment: "night_clouds_01",
   //starry_night_01
   //planet_01
   //dark_city_night_01
