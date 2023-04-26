@@ -48,7 +48,7 @@ export const Djungle: CodeKitComponent = (props) => {
         <Distribute
           maxItems={100}
           outerBoundRadius={20}
-          gapFreq={0.1}
+          gapFreq={0.2}
           gapMax={30}
           gapMin={3}
           spaceMin={4}
@@ -60,7 +60,14 @@ export const Djungle: CodeKitComponent = (props) => {
                 x={item.x}
                 z={item.z}
                 r={[0, random.int(0, 360), 0]}
-                id={item.isSpace ? "bull_skull_01" : "en_p_jaguar_head_01_t2"}
+                id={random.fromArray([
+                  "bull_skull_01",
+                  "water_lily_flower_01",
+                  "water_lily_pad_01",
+                  "en_p_jaguar_head_01_t2",
+                  "en_p_infested_arm_01",
+                  "en_p_infested_hand_01",
+                ])}
                 s={item.isSpace ? 2 : 0.2}
               />
             </Hovering>

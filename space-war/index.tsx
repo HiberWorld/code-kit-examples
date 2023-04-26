@@ -13,25 +13,21 @@ import { RampedGrid } from "./RampedGrid";
 import { Hub } from "./Hub";
 import { Sentinels } from "./Sentinels";
 import { StarshipHiberion } from "./StarshipHiberion";
-import { Fish } from "./Fish";
-
-const keyframeAnimated = { loopBehaviour: "REVERSE" as LoopBehaviour };
-
-const pause = 5;
-const speed = 8;
+import { Wagyu } from "./Wagyu";
 
 const World = () => {
   return (
-    <HNode rotX={-90 + 90}>
-      <StarshipHiberion />
-
+    <HNode>
+      <Wagyu>
+        <StarshipHiberion />
+      </Wagyu>
       {/* <Stack
-        dim={5}
-        segments={{ length: 4, direction: "IN" }}
-        renderItem={() => <Prefab id="cube_01" />}
-      >
-        <Prefab id="cactus_01" p={[0, 2, 0]} />
-      </Stack> */}
+      dim={5}
+      segments={{ length: 4, direction: "IN" }}
+      renderItem={() => <Prefab id="cube_01" />}
+    >
+      <Prefab id="cactus_01" p={[0, 2, 0]} />
+    </Stack> */}
     </HNode>
   );
 };

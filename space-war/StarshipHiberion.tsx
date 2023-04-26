@@ -42,7 +42,7 @@ export const StarshipHiberion = (props: {}) => {
 
         <Tube length={4} p={[0, 0, -8]}>
           <Hub />
-          <Tube length={4} p={[0, 0, -20]}>
+          <Tube length={8} p={[0, 0, -20]}>
             <Sentinels />
             <Prefab id="torus_thick_01" rotX={90} s={40} z={-20} />
             <Prefab id="torus_thin_01" rotX={90} s={52} z={-20} />
@@ -61,18 +61,22 @@ export const StarshipHiberion = (props: {}) => {
                 )}
               ></InCircle>
 
-              <Prefab id="rounded_cylinder_01" rotX={90} s={[8, 1, 8]} z={3} />
+              <Prefab id="rounded_cylinder_01" rotX={90} s={[6, 1, 6]} z={3} />
 
-              <MeatGrinder x={0} z={-10} y={0} rotX={90} />
-
+              <MeatGrinder z={11.5} x={0} y={0} rotX={90} />
+              <HNode x={0} y={0} z={40}>
+                <Prefab id="hiberpunk_decoration_disc_t1" s={2}>
+                  <Prefab id="gpl_spawn_point_01" y={2} rotY={0} />
+                </Prefab>
+              </HNode>
               <HNode z={-10}>
                 <Prefab id="torus_thick_01" rotX={90} s={40} />
                 <Prefab id="torus_thin_01" rotX={90} s={52} />
-                <Tube length={2}>
+                <Tube length={3}>
                   <Prefab
                     id="rounded_cylinder_01"
                     rotX={90}
-                    s={[8, 1, 8]}
+                    s={[6, 1, 6]}
                     z={-3}
                   />
 
@@ -94,7 +98,7 @@ export const StarshipHiberion = (props: {}) => {
                     ></InCircle>
                     <Djungle />
                     <RoofWalkway p={[64, 10, 18.2]} />
-                    <HNode x={0} y={0} z={40}>
+                    <HNode x={0} y={-15} z={20}>
                       <Prefab id="hiberpunk_decoration_disc_t1" s={2}>
                         <Prefab id="gpl_spawn_point_01" y={2} rotY={0} />
                       </Prefab>

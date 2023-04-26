@@ -6,7 +6,7 @@ import { CodeKitComponent, HNode, Prefab } from "@hiberworld/hdk-react";
 export const RoofWalkway: CodeKitComponent = (props) => (
   <HNode {...props}>
     <Grid
-      rows={16}
+      rows={14}
       columns={1}
       itemSpacing={8}
       children={(row, column) => {
