@@ -1,18 +1,8 @@
 import React from "react";
-import {
-  render,
-  Prefab,
-  HNode,
-  Grid,
-  Stack,
-  Ramp,
-  RandomTransform,
-  Distribute,
-  Hovering,
-  Spinning,
-  InCircle,
-  CodeKitComponent,
-} from "@hiberworld/react-code-kit";
+import { Spinning } from "@hiberworld/hdk-react-components";
+
+import { CodeKitComponent, HNode, Prefab } from "@hiberworld/hdk-react";
+
 import { GravityWell } from "./GravityWell";
 
 const Axis = (props) => {

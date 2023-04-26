@@ -1,17 +1,12 @@
 import React from "react";
-import {
-  Prefab,
-  CodeKitComponent,
-  useRandom,
-  InCircle,
-  Spinning,
-  Grid,
-  HNode,
-  Stack,
-} from "@hiberworld/react-code-kit";
+import { Stack, InCircle, Spinning } from "@hiberworld/hdk-react-components";
 
-import { Prefab as PrefabType } from "@hiberworld/code-kit";
-import { random90Deg } from "@hiberworld/react-code-kit/src/utils";
+import {
+  CodeKitComponent,
+  HNode,
+  Prefab,
+  useRandom,
+} from "@hiberworld/hdk-react";
 
 export const MeatGrinder: CodeKitComponent = (props) => {
   const random = useRandom();
@@ -19,7 +14,7 @@ export const MeatGrinder: CodeKitComponent = (props) => {
   return (
     <HNode {...props}>
       <Stack
-        dim={7}
+        dim={2}
         segments={[{ length: 9, direction: "DOWN" }]}
         renderItem={(index) => (
           <HNode>

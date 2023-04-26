@@ -12,7 +12,8 @@
     "@hiberworld/code-kit": "^3.18.0",
     "@hiberworld/code-kit-cli": "^0.4.13",
     "@hiberworld/code-kit-utils": "^2.6.10",
-    "@hiberworld/react-code-kit": "^0.2.4",
+    "@hiberworld/hdk-react": "^0.1.2",
+    "@hiberworld/hdk-react-components": "^0.1.0",
     "react": "^18.2.0"
   }
 }

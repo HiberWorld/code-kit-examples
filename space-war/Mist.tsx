@@ -1,12 +1,7 @@
 import React from "react";
-import {
-  Prefab,
-  CodeKitComponent,
-  useRandom,
-  InCircle,
-  Spinning,
-} from "@hiberworld/react-code-kit";
+import { InCircle, Spinning } from "@hiberworld/hdk-react-components";
 
+import { CodeKitComponent, Prefab, useRandom } from "@hiberworld/hdk-react";
 import { Prefab as PrefabType } from "@hiberworld/code-kit";
 
 export const Mist: CodeKitComponent = (props) => (

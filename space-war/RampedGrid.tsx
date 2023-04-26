@@ -1,12 +1,9 @@
 import React from "react";
-import {
-  Prefab,
-  HNode,
-  Stack,
-  Ramp,
-  RandomTransform,
-  CodeKitComponent,
-} from "@hiberworld/react-code-kit";
+import { Stack, Ramp } from "@hiberworld/hdk-react-components";
+
+import { CodeKitComponent, HNode, Prefab } from "@hiberworld/hdk-react";
+
+import { RampedGrid } from "./RampedGrid";
 
 export const RampedGrid: CodeKitComponent = (props) => (
   <HNode {...props}>

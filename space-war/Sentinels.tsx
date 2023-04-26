@@ -1,18 +1,9 @@
 import React from "react";
-import {
-  render,
-  Prefab,
-  HNode,
-  Grid,
-  Stack,
-  Ramp,
-  RandomTransform,
-  Distribute,
-  Hovering,
-  Spinning,
-  InCircle,
-  CodeKitComponent,
-} from "@hiberworld/react-code-kit";
+import { Hovering, Spinning } from "@hiberworld/hdk-react-components";
+
+import { HNode, Prefab } from "@hiberworld/hdk-react";
+
+import { Sentinels } from "./Sentinels";
 
 const Sentinel = (props: {
   y: number;

@@ -1,10 +1,7 @@
 import React from "react";
-import {
-  Prefab,
-  HNode,
-  Stack,
-  CodeKitComponent,
-} from "@hiberworld/react-code-kit";
+import { Stack } from "@hiberworld/hdk-react-components";
+
+import { CodeKitComponent, HNode, Prefab } from "@hiberworld/hdk-react";
 
 import { Prefab as HPrefab } from "@hiberworld/code-kit";
 

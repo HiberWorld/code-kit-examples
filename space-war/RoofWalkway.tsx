@@ -1,11 +1,7 @@
 import React from "react";
-import {
-  Prefab,
-  HNode,
-  Stack,
-  CodeKitComponent,
-  Grid,
-} from "@hiberworld/react-code-kit";
+import { Grid } from "@hiberworld/hdk-react-components";
+
+import { CodeKitComponent, HNode, Prefab } from "@hiberworld/hdk-react";
 
 export const RoofWalkway: CodeKitComponent = (props) => (
   <HNode {...props}>

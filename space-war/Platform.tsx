@@ -1,13 +1,8 @@
 import React from "react";
-import {
-  Prefab,
-  HNode,
-  Stack,
-  CodeKitComponent,
-  Grid,
-} from "@hiberworld/react-code-kit";
+import { Grid } from "@hiberworld/hdk-react-components";
 
-import { Prefab as HPrefab } from "@hiberworld/code-kit";
+import { CodeKitComponent, HNode, Prefab } from "@hiberworld/hdk-react";
+
 import { Containers } from "./Containers";
 import { RampedGrid } from "./RampedGrid";
 

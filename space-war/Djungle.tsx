@@ -1,18 +1,16 @@
 import React from "react";
-import {
-  Prefab,
-  CodeKitComponent,
-  useRandom,
-  InCircle,
-  Spinning,
-  Hovering,
-  Distribute,
-  HNode,
-  Random,
-} from "@hiberworld/react-code-kit";
+import { Distribute, Hovering } from "@hiberworld/hdk-react-components";
 
-import { Prefab as PrefabType } from "@hiberworld/code-kit";
+import {
+  CodeKitComponent,
+  HNode,
+  Prefab,
+  Random,
+  useRandom,
+} from "@hiberworld/hdk-react";
+
 import { Fish } from "./Fish";
+
 import { Mist } from "./Mist";
 
 const fishSpeed = 5;

@@ -1,14 +1,9 @@
 import React from "react";
-import {
-  Prefab,
-  HNode,
-  Stack,
-  CodeKitComponent,
-  useRandom,
-  Hovering,
-} from "@hiberworld/react-code-kit";
+import { Hovering } from "@hiberworld/hdk-react-components";
 
-import { Prefab as HPrefab, Scale3, scaleToVec3 } from "@hiberworld/code-kit";
+import { Scale3, scaleToVec3 } from "@hiberworld/code-kit";
+
+import { CodeKitComponent, Prefab, useRandom } from "@hiberworld/hdk-react";
 
 type FishOptions = {
   dim?: Scale3;

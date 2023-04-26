@@ -1,29 +1,15 @@
 import React from "react";
-import {
-  render,
-  Prefab,
-  HNode,
-  Grid,
-  Stack,
-  Ramp,
-  RandomTransform,
-  Distribute,
-  Hovering,
-  Spinning,
-  InCircle,
-  CodeKitComponent,
-  Random,
-} from "@hiberworld/react-code-kit";
+import { Stack, InCircle } from "@hiberworld/hdk-react-components";
 
-import { Containers } from "./Containers";
-import { RampedGrid } from "./RampedGrid";
+import { CodeKitComponent, HNode, Prefab } from "@hiberworld/hdk-react";
+
 import { Hub } from "./Hub";
 import { Sentinels } from "./Sentinels";
 import { Platform } from "./Platform";
-import { RoofWalkway } from "./RoofWalkway";
-import { Fish } from "./Fish";
-import { Djungle } from "./Djungle";
 import { MeatGrinder } from "./MeatGrinder";
+
+import { Djungle } from "./Djungle";
+import { RoofWalkway } from "./RoofWalkway";
 
 const Tube: CodeKitComponent<{ length: number }> = (input) => {
   const { p, r, children, ...props } = input;
@@ -75,12 +61,14 @@ export const StarshipHiberion = (props: {}) => {
                 )}
               ></InCircle>
 
-              <MeatGrinder x={0} y={0} rotX={90} />
+              <Prefab id="rounded_cylinder_01" rotX={90} s={[8, 1, 8]} z={3} />
+
+              <MeatGrinder x={0} z={-10} y={0} rotX={90} />
 
               <HNode z={-10}>
                 <Prefab id="torus_thick_01" rotX={90} s={40} />
                 <Prefab id="torus_thin_01" rotX={90} s={52} />
-                <Tube length={4}>
+                <Tube length={2}>
                   <Prefab
                     id="rounded_cylinder_01"
                     rotX={90}
