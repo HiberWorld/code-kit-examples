@@ -7,16 +7,16 @@ import { Containers } from "./Containers";
 import { RampedGrid } from "./RampedGrid";
 
 export const Platform: CodeKitComponent = (input) => (
-  <HNode p={[-30, -39.5, -105]}>
+  <HNode p={[-10, -39.5, -90]}>
     <Grid
-      rows={12}
-      columns={11}
+      rows={15}
+      columns={15}
       itemSpacing={8}
       children={(row, column) => {
         return <Prefab id="en_p_grid_platform_01" s={[2.2, 1, 2.2]} />;
       }}
     ></Grid>
-    <Containers />
+    <Containers z={40} />
     <RampedGrid p={[8, 20, 64]} s={[1, 1, 1]} />
   </HNode>
 );

@@ -6,7 +6,7 @@ import { LoopBehaviour } from "@hiberworld/code-kit";
 
 const keyframeAnimated = { loopBehaviour: "REVERSE" as LoopBehaviour };
 
-const pause = 60;
+const pause = 600;
 const speed = 20;
 
 export const Wagyu: CodeKitComponent = (props) => {

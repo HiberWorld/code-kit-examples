@@ -2,9 +2,10 @@ import React from "react";
 import { Stack } from "@hiberworld/hdk-react-components";
 
 import { HNode, Prefab } from "@hiberworld/hdk-react";
+import { CodeKitComponent } from "@hiberworld/hdk-react/src/types";
 
-export const Containers = () => (
-  <HNode z={40} s={1.1}>
+export const Containers: CodeKitComponent = (props) => (
+  <HNode {...props} s={1.1}>
     <Prefab id="en_p_shipping_container_01">
       <Prefab id="en_p_shipping_container_01" y={5}></Prefab>
       <Stack
