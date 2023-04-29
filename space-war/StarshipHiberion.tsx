@@ -124,6 +124,14 @@ export const StarshipHiberion = (props: {}) => {
                         emissiveStrength={1.5}
                         src="./static/boi.mp4"
                       ></VideoPanel>
+                      <VideoPanel
+                        p={[-44, 36, 70]}
+                        r={[40, 90, 0]}
+                        ratio={498 / 211}
+                        s={8}
+                        emissiveStrength={1.5}
+                        src="./static/messug.mp4"
+                      ></VideoPanel>
                     </HNode>
                     <HNode z={10}>
                       <Prefab id="torus_thick_01" rotX={90} s={40} z={-20} />
