@@ -1,5 +1,10 @@
 import React from "react";
-import { Stack, InCircle } from "@hiberworld/hdk-react-components";
+import {
+  Stack,
+  InCircle,
+  MediaDisplay,
+  ImagePanel,
+} from "@hiberworld/hdk-react-components";
 
 import { CodeKitComponent, HNode, Prefab } from "@hiberworld/hdk-react";
 
@@ -10,6 +15,7 @@ import { MeatGrinder } from "./MeatGrinder";
 
 import { Djungle } from "./Djungle";
 import { RoofWalkway } from "./RoofWalkway";
+import { VideoPanel } from "@hiberworld/hdk-react-components";
 
 const Tube: CodeKitComponent<{ length: number }> = (input) => {
   const { p, r, children, ...props } = input;
@@ -102,6 +108,22 @@ export const StarshipHiberion = (props: {}) => {
                       <Prefab id="hiberpunk_decoration_disc_t1" s={2}>
                         <Prefab id="gpl_spawn_point_01" y={2} rotY={0} />
                       </Prefab>
+                      <VideoPanel
+                        p={[44, 36, 80]}
+                        r={[-40, 90, 0]}
+                        ratio={833 / 1480}
+                        s={8}
+                        emissiveStrength={1.5}
+                        src="./static/gurl.mp4"
+                      ></VideoPanel>
+                      <VideoPanel
+                        p={[44, 36, 70]}
+                        r={[-40, 90, 0]}
+                        ratio={833 / 1480}
+                        s={8}
+                        emissiveStrength={1.5}
+                        src="./static/boi.mp4"
+                      ></VideoPanel>
                     </HNode>
                     <HNode z={10}>
                       <Prefab id="torus_thick_01" rotX={90} s={40} z={-20} />

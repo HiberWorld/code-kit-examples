@@ -1,6 +1,6 @@
 import React from "react";
 import { Distribute, Hovering } from "@hiberworld/hdk-react-components";
-
+import { Prefab as PrefabId } from "@hiberworld/code-kit";
 import {
   CodeKitComponent,
   HNode,
@@ -14,6 +14,15 @@ import { Fish } from "./Fish";
 import { Mist } from "./Mist";
 
 const fishSpeed = 5;
+
+const garbage = [
+  { id: "bull_skull_01", s: 2, r: [0, 0, 0] },
+  { id: "water_lily_flower_01", s: 1, r: [0, 0, 0] },
+  { id: "water_lily_pad_01", s: 1, r: [0, 0, 0] },
+  { id: "en_p_jaguar_head_01_t1", s: 0.5, r: [0, 0, 0] },
+  { id: "en_p_infested_arm_01", s: 2, r: [0, 0, 90] },
+  { id: "en_p_infested_hand_01", s: 2, r: [0, 0, 90] },
+];
 
 export const Djungle: CodeKitComponent = (props) => {
   const random = useRandom();
@@ -30,7 +39,7 @@ export const Djungle: CodeKitComponent = (props) => {
         s={[1, 2, 1.1]}
         p={[0, -36, 55]}
       />
-      <HNode p={[0, -35.2, 50]}>
+      <HNode p={[0, -33.5, 50]}>
         <Distribute
           outerBoundRadius={35}
           gapFreq={0.7}
@@ -54,24 +63,21 @@ export const Djungle: CodeKitComponent = (props) => {
           spaceMin={4}
           spaceMax={30}
           gladeRadius={1}
-          renderItem={(item) => (
-            <Hovering magnitude={0.05}>
-              <Prefab
-                x={item.x}
-                z={item.z}
-                r={[0, random.int(0, 360), 0]}
-                id={random.fromArray([
-                  "bull_skull_01",
-                  "water_lily_flower_01",
-                  "water_lily_pad_01",
-                  "en_p_jaguar_head_01_t2",
-                  "en_p_infested_arm_01",
-                  "en_p_infested_hand_01",
-                ])}
-                s={item.isSpace ? 2 : 0.2}
-              />
-            </Hovering>
-          )}
+          renderItem={(item) => {
+            const g = random.fromArray(garbage);
+
+            return (
+              <Hovering magnitude={0.05}>
+                <Prefab
+                  x={item.x}
+                  z={item.z}
+                  r={[g.r[0], g.r[1] + random.int(0, 360), g.r[2]]}
+                  id={g.id as PrefabId}
+                  s={g.s}
+                />
+              </Hovering>
+            );
+          }}
         ></Distribute>
       </HNode>
       <Prefab id="water_plane_01" s={[10, 10, 18]} p={[0, -50, 65]} />
