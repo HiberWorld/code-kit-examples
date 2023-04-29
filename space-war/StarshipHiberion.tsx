@@ -15,6 +15,8 @@ import { MeatGrinder } from "./MeatGrinder";
 
 import { Djungle } from "./Djungle";
 import { RoofWalkway } from "./RoofWalkway";
+import { VideoPanels } from "./VideoPanels";
+
 import { VideoPanel } from "@hiberworld/hdk-react-components";
 
 const Tube: CodeKitComponent<{ length: number }> = (input) => {
@@ -47,6 +49,11 @@ export const StarshipHiberion = (props: {}) => {
         />
 
         <Tube length={4} p={[0, 0, -8]}>
+          <HNode x={200}>
+            <Prefab id="hiberpunk_decoration_disc_t1" s={2}>
+              <Prefab id="gpl_spawn_point_01" y={2} rotY={0} />
+            </Prefab>
+          </HNode>
           <Hub />
           <Tube length={8} p={[0, 0, -20]}>
             <Sentinels />
@@ -104,34 +111,11 @@ export const StarshipHiberion = (props: {}) => {
                     ></InCircle>
                     <Djungle />
                     <RoofWalkway p={[64, 10, 18.2]} />
+                    <VideoPanels p={[0, 21, 70]} />
                     <HNode x={0} y={-15} z={20}>
                       <Prefab id="hiberpunk_decoration_disc_t1" s={2}>
                         <Prefab id="gpl_spawn_point_01" y={2} rotY={0} />
                       </Prefab>
-                      <VideoPanel
-                        p={[44, 36, 80]}
-                        r={[-40, 90, 0]}
-                        ratio={833 / 1480}
-                        s={8}
-                        emissiveStrength={1.5}
-                        src="./static/gurl.mp4"
-                      ></VideoPanel>
-                      <VideoPanel
-                        p={[44, 36, 70]}
-                        r={[-40, 90, 0]}
-                        ratio={833 / 1480}
-                        s={8}
-                        emissiveStrength={1.5}
-                        src="./static/boi.mp4"
-                      ></VideoPanel>
-                      <VideoPanel
-                        p={[-44, 36, 70]}
-                        r={[40, 90, 0]}
-                        ratio={498 / 211}
-                        s={8}
-                        emissiveStrength={1.5}
-                        src="./static/messug.mp4"
-                      ></VideoPanel>
                     </HNode>
                     <HNode z={10}>
                       <Prefab id="torus_thick_01" rotX={90} s={40} z={-20} />
