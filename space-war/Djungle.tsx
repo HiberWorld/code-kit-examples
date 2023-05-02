@@ -24,6 +24,8 @@ const garbage = [
   { id: "en_p_infested_hand_01", s: 2, r: [0, 0, 90] },
 ];
 
+// tree_house_balcony // fantasy_tree_01 // fantasy_tree_01 // en_p_tomato_plant_01
+
 export const Djungle: CodeKitComponent = (props) => {
   const random = useRandom();
 
