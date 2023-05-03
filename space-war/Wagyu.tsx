@@ -1,15 +1,15 @@
 import React from "react";
 
-import { CodeKitComponent, HNode } from "@hiberworld/hdk-react";
+import { HDKComponent, HNode } from "@hiber3d/hdk-react";
 
-import { LoopBehaviour } from "@hiberworld/code-kit";
+import { LoopBehaviour } from "@hiber3d/hdk-core";
 
 const keyframeAnimated = { loopBehaviour: "REVERSE" as LoopBehaviour };
 
 const pause = 600;
 const speed = 20;
 
-export const Wagyu: CodeKitComponent = (props) => {
+export const Wagyu: HDKComponent = (props) => {
   return (
     <HNode>
       <HNode {...props} keyframeAnimated={keyframeAnimated}>

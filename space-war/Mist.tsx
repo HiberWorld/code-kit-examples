@@ -1,10 +1,10 @@
 import React from "react";
-import { InCircle, Spinning } from "@hiberworld/hdk-react-components";
+import { InCircle, Spinning } from "@hiber3d/hdk-react-components";
 
-import { CodeKitComponent, Prefab, useRandom } from "@hiberworld/hdk-react";
-import { Prefab as PrefabType } from "@hiberworld/code-kit";
+import { HDKComponent, Prefab, useRandom } from "@hiber3d/hdk-react";
+import { Prefab as PrefabType } from "@hiber3d/hdk-core";
 
-export const Mist: CodeKitComponent = (props) => (
+export const Mist: HDKComponent = (props) => (
   <Spinning duration={256} direction={-1} {...props}>
     <InCircle
       y={0}

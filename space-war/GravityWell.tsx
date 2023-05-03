@@ -1,15 +1,15 @@
 import React from "react";
-import { Stack } from "@hiberworld/hdk-react-components";
+import { Stack } from "@hiber3d/hdk-react-components";
 
-import { CodeKitComponent, HNode, Prefab } from "@hiberworld/hdk-react";
+import { HDKComponent, HNode, Prefab } from "@hiber3d/hdk-react";
 
-import { Prefab as HPrefab } from "@hiberworld/code-kit";
+import { Prefab as HPrefab } from "@hiber3d/hdk-core";
 
 type GravityWellOpts = {
   hologram: HPrefab;
 };
 
-export const GravityWell: CodeKitComponent<GravityWellOpts> = (input) => {
+export const GravityWell: HDKComponent<GravityWellOpts> = (input) => {
   const { p, s, r, ...props } = input;
 
   const { hologram } = input;

@@ -1,7 +1,7 @@
 import React from "react";
-import { Spinning } from "@hiberworld/hdk-react-components";
+import { Spinning } from "@hiber3d/hdk-react-components";
 
-import { CodeKitComponent, HNode, Prefab } from "@hiberworld/hdk-react";
+import { HDKComponent, HNode, Prefab } from "@hiber3d/hdk-react";
 
 import { GravityWell } from "./GravityWell";
 
@@ -37,7 +37,7 @@ const Axis = (props) => {
   );
 };
 
-export const Hub: CodeKitComponent = (props) => (
+export const Hub: HDKComponent = (props) => (
   <Spinning duration={100} r={[90, 0, 0]} p={[0, 0, -16]}>
     <GravityWell p={[0, 0, 30]} hologram="hologram_01_hibert"></GravityWell>
     <GravityWell

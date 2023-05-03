@@ -1,7 +1,7 @@
 import React from "react";
-import { Hovering, Spinning } from "@hiberworld/hdk-react-components";
+import { Hovering, Spinning } from "@hiber3d/hdk-react-components";
 
-import { HNode, Prefab } from "@hiberworld/hdk-react";
+import { HNode, Prefab } from "@hiber3d/hdk-react";
 
 import { Sentinels } from "./Sentinels";
 

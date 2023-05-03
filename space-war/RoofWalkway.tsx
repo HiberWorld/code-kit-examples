@@ -1,9 +1,9 @@
 import React from "react";
-import { Grid } from "@hiberworld/hdk-react-components";
+import { Grid } from "@hiber3d/hdk-react-components";
 
-import { CodeKitComponent, HNode, Prefab } from "@hiberworld/hdk-react";
+import { HDKComponent, HNode, Prefab } from "@hiber3d/hdk-react";
 
-export const RoofWalkway: CodeKitComponent = (props) => (
+export const RoofWalkway: HDKComponent = (props) => (
   <HNode {...props}>
     <Grid
       rows={14}

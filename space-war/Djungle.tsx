@@ -1,13 +1,13 @@
 import React from "react";
-import { Distribute, Hovering } from "@hiberworld/hdk-react-components";
-import { Prefab as PrefabId } from "@hiberworld/code-kit";
+import { Distribute, Hovering } from "@hiber3d/hdk-react-components";
+import { Prefab as PrefabId } from "@hiber3d/hdk-core";
 import {
-  CodeKitComponent,
+  HDKComponent,
   HNode,
   Prefab,
   Random,
   useRandom,
-} from "@hiberworld/hdk-react";
+} from "@hiber3d/hdk-react";
 
 import { Fish } from "./Fish";
 
@@ -26,7 +26,7 @@ const garbage = [
 
 // tree_house_balcony // fantasy_tree_01 // fantasy_tree_01 // en_p_tomato_plant_01
 
-export const Djungle: CodeKitComponent = (props) => {
+export const Djungle: HDKComponent = (props) => {
   const random = useRandom();
 
   return (

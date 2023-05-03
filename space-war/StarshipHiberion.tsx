@@ -4,9 +4,9 @@ import {
   InCircle,
   MediaDisplay,
   ImagePanel,
-} from "@hiberworld/hdk-react-components";
+} from "@hiber3d/hdk-react-components";
 
-import { CodeKitComponent, HNode, Prefab } from "@hiberworld/hdk-react";
+import { HDKComponent, HNode, Prefab } from "@hiber3d/hdk-react";
 
 import { Hub } from "./Hub";
 import { Sentinels } from "./Sentinels";
@@ -17,9 +17,9 @@ import { Djungle } from "./Djungle";
 import { RoofWalkway } from "./RoofWalkway";
 import { VideoPanels } from "./VideoPanels";
 
-import { VideoPanel } from "@hiberworld/hdk-react-components";
+import { VideoPanel } from "@hiber3d/hdk-react-components";
 
-const Tube: CodeKitComponent<{ length: number }> = (input) => {
+const Tube: HDKComponent<{ length: number }> = (input) => {
   const { p, r, children, ...props } = input;
   const length = input.length;
 

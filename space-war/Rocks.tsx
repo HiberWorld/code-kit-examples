@@ -1,9 +1,9 @@
 import React from "react";
-import { Distribute } from "@hiberworld/hdk-react-components";
+import { Distribute } from "@hiber3d/hdk-react-components";
 
-import { CodeKitComponent, HNode, Prefab } from "@hiberworld/hdk-react";
+import { HDKComponent, HNode, Prefab } from "@hiber3d/hdk-react";
 
-export const Rocks: CodeKitComponent = (input) => (
+export const Rocks: HDKComponent = (input) => (
   <HNode z={-240}>
     <Distribute
       spaceMax={1}

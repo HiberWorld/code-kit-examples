@@ -1,9 +1,9 @@
 import React from "react";
-import { Hovering } from "@hiberworld/hdk-react-components";
+import { Hovering } from "@hiber3d/hdk-react-components";
 
-import { Scale3, scaleToVec3 } from "@hiberworld/code-kit";
+import { Scale3, scaleToVec3 } from "@hiber3d/hdk-core";
 
-import { CodeKitComponent, Prefab, useRandom } from "@hiberworld/hdk-react";
+import { HDKComponent, Prefab, useRandom } from "@hiber3d/hdk-react";
 
 type FishOptions = {
   dim?: Scale3;
@@ -17,7 +17,7 @@ const quadrants = [
   { x: 0, y: 1 },
 ];
 
-export const Fish: CodeKitComponent<FishOptions> = (input) => {
+export const Fish: HDKComponent<FishOptions> = (input) => {
   const { dim, speed = 5, ...props } = input;
 
   const random = useRandom();

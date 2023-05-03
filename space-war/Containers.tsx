@@ -1,12 +1,12 @@
 import React from "react";
-import { Stack } from "@hiberworld/hdk-react-components";
+import { Stack } from "@hiber3d/hdk-react-components";
 
-import { HNode, Prefab } from "@hiberworld/hdk-react";
-import { CodeKitComponent } from "@hiberworld/hdk-react/src/types";
+import { HNode, Prefab } from "@hiber3d/hdk-react";
+import { HDKComponent } from "@hiber3d/hdk-react";
 
 // trashcontainer_01 // trashcontainer_01_t1 //
 
-export const Containers: CodeKitComponent = (props) => (
+export const Containers: HDKComponent = (props) => (
   <HNode {...props} s={1.1}>
     <HNode p={[40, 0, 0]}>
       <Stack

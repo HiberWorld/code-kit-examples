@@ -1,11 +1,11 @@
 import React from "react";
-import { Stack, Ramp } from "@hiberworld/hdk-react-components";
+import { Stack, Ramp } from "@hiber3d/hdk-react-components";
 
-import { CodeKitComponent, HNode, Prefab } from "@hiberworld/hdk-react";
+import { HDKComponent, HNode, Prefab } from "@hiber3d/hdk-react";
 
 import { RampedGrid } from "./RampedGrid";
 
-export const RampedGrid: CodeKitComponent = (props) => (
+export const RampedGrid: HDKComponent = (props) => (
   <HNode {...props}>
     <Stack
       dim={[5, 3, 3]}

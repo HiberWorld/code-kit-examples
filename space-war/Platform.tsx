@@ -1,12 +1,12 @@
 import React from "react";
-import { Grid } from "@hiberworld/hdk-react-components";
+import { Grid } from "@hiber3d/hdk-react-components";
 
-import { CodeKitComponent, HNode, Prefab } from "@hiberworld/hdk-react";
+import { HDKComponent, HNode, Prefab } from "@hiber3d/hdk-react";
 
 import { Containers } from "./Containers";
 import { RampedGrid } from "./RampedGrid";
 
-export const Platform: CodeKitComponent = (input) => (
+export const Platform: HDKComponent = (input) => (
   <HNode p={[-10, -39.5, -72]}>
     <Grid
       rows={15}

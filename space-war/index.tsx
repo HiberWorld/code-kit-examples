@@ -1,12 +1,12 @@
 import React from "react";
 
-import { CodeKitComponent, HNode, Prefab, render } from "@hiberworld/hdk-react";
+import { HDKComponent, HNode, Prefab, render } from "@hiber3d/hdk-react";
 
 import {
   Prefab as HPrefab,
   HNode as HHNode,
   LoopBehaviour,
-} from "@hiberworld/code-kit";
+} from "@hiber3d/hdk-core";
 
 import { Containers } from "./Containers";
 import { RampedGrid } from "./RampedGrid";

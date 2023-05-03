@@ -404,9 +404,9 @@
     add "^2.0.6"
     lodash-es "^4.17.21"
 
-"@hiberworld/engine@^1.29.2":
+"@hiber3d/engine@^1.29.2":
   version "1.30.0"
-  resolved "https://registry.yarnpkg.com/@hiberworld/engine/-/engine-1.30.0.tgz#6171cd8dbe8deedeae4ab001cf642d39ee6a5e36"
+  resolved "https://registry.yarnpkg.com/@hiber3d/engine/-/engine-1.30.0.tgz#6171cd8dbe8deedeae4ab001cf642d39ee6a5e36"
   integrity sha512-Kd+eqRpeDdeyxGaO2Ibxvd7E0hd9Xhzmz5HNcHelvv6mRT1WT3EE2AcVt0hFte80VjgVdLzrCWv67BIu/E2qBA==
 
 "@manypkg/find-root@^1.1.0":

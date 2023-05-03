@@ -1,15 +1,10 @@
 import React from "react";
-import { Stack, InCircle, Spinning } from "@hiberworld/hdk-react-components";
+import { Stack, InCircle, Spinning } from "@hiber3d/hdk-react-components";
 
-import {
-  CodeKitComponent,
-  HNode,
-  Prefab,
-  useRandom,
-} from "@hiberworld/hdk-react";
-import { materials } from "@hiberworld/code-kit";
+import { HDKComponent, HNode, Prefab, useRandom } from "@hiber3d/hdk-react";
+import { materials } from "@hiber3d/hdk-core";
 
-export const MeatGrinder: CodeKitComponent = (props) => {
+export const MeatGrinder: HDKComponent = (props) => {
   const random = useRandom();
 
   return (

@@ -1,9 +1,9 @@
 import React from "react";
 
-import { CodeKitComponent, HNode } from "@hiberworld/hdk-react";
-import { VideoPanel } from "@hiberworld/hdk-react-components";
+import { HDKComponent, HNode } from "@hiber3d/hdk-react";
+import { VideoPanel } from "@hiber3d/hdk-react-components";
 
-export const VideoPanels: CodeKitComponent = (props) => {
+export const VideoPanels: HDKComponent = (props) => {
   return (
     <HNode {...props}>
       <VideoPanel
