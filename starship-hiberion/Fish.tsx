@@ -1,9 +1,6 @@
-import React from "react";
-import { Hovering } from "@hiber3d/hdk-react-components";
-
 import { Scale3, scaleToVec3 } from "@hiber3d/hdk-core";
-
 import { HDKComponent, Prefab, useRandom } from "@hiber3d/hdk-react";
+import { Hovering } from "@hiber3d/hdk-react-components";
 
 type FishOptions = {
   dim?: Scale3;

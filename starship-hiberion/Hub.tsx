@@ -1,11 +1,8 @@
-import React from "react";
-import { Spinning } from "@hiber3d/hdk-react-components";
-
 import { HDKComponent, HNode, Prefab } from "@hiber3d/hdk-react";
-
+import { Spinning } from "@hiber3d/hdk-react-components";
 import { GravityWell } from "./GravityWell";
 
-const Axis = (props) => {
+const Axis: HDKComponent = (props) => {
   return (
     <HNode>
       <Prefab id="quarter_pipe_wall_01" rotZ={0} s={[8, 4, 8]} x={13} z={8} />

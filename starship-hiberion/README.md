@@ -1,8 +1,8 @@
-# starship-hiberion
+# the-grid
 
-This is a Hiber3D HDK project created using [create-hdk](https://github.com/hiberworld/codekit/packages/create-hdk)
+This is a [Hiber Code-Kit](https://github.com/HiberWorld/codekit) project created using [create-hiber-world](https://github.com/HiberWorld/codekit/packages/create-hiber-world)
 
-Please see [HDK Docs](https://hiberworld.github.io/codekit/) for full documentation.
+Please see [Code-Kit Docs](https://hiberworld.github.io/codekit/) for full documentation.
 
 Install with this command:
 

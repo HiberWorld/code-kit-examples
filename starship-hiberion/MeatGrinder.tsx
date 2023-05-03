@@ -1,8 +1,6 @@
-import React from "react";
-import { Stack, InCircle, Spinning } from "@hiber3d/hdk-react-components";
-
-import { HDKComponent, HNode, Prefab, useRandom } from "@hiber3d/hdk-react";
 import { materials } from "@hiber3d/hdk-core";
+import { HDKComponent, HNode, Prefab, useRandom } from "@hiber3d/hdk-react";
+import { Stack, InCircle, Spinning } from "@hiber3d/hdk-react-components";
 
 export const MeatGrinder: HDKComponent = (props) => {
   const random = useRandom();

@@ -1,8 +1,5 @@
-import React from "react";
+import { HNode, Prefab, HDKComponent } from "@hiber3d/hdk-react";
 import { Stack } from "@hiber3d/hdk-react-components";
-
-import { HNode, Prefab } from "@hiber3d/hdk-react";
-import { HDKComponent } from "@hiber3d/hdk-react";
 
 // trashcontainer_01 // trashcontainer_01_t1 //
 
@@ -17,6 +14,8 @@ export const Containers: HDKComponent = (props) => (
           <Prefab id="en_p_shipping_container_01" s={[1, 0.8, 1]}></Prefab>
         )}
       ></Stack>
+      <Prefab id="trashcontainer_01" p={[0, 0, 10]} />
+      <Prefab id="trashcontainer_01_t1" p={[4, 0, 10]} />
       <Stack
         p={[0, 0, 12]}
         dim={4}

@@ -1,9 +1,6 @@
-import React from "react";
-import { Stack } from "@hiber3d/hdk-react-components";
-
-import { HDKComponent, HNode, Prefab } from "@hiber3d/hdk-react";
-
 import { Prefab as HPrefab } from "@hiber3d/hdk-core";
+import { HDKComponent, HNode, Prefab } from "@hiber3d/hdk-react";
+import { Stack } from "@hiber3d/hdk-react-components";
 
 type GravityWellOpts = {
   hologram: HPrefab;

@@ -1,5 +1,3 @@
-import React from "react";
-import { Distribute, Hovering } from "@hiber3d/hdk-react-components";
 import { Prefab as PrefabId } from "@hiber3d/hdk-core";
 import {
   HDKComponent,
@@ -8,9 +6,9 @@ import {
   Random,
   useRandom,
 } from "@hiber3d/hdk-react";
+import { Distribute, Hovering } from "@hiber3d/hdk-react-components";
 
 import { Fish } from "./Fish";
-
 import { Mist } from "./Mist";
 
 const fishSpeed = 5;

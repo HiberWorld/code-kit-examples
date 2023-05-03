@@ -1,9 +1,6 @@
-import React from "react";
 import { Stack, Ramp } from "@hiber3d/hdk-react-components";
 
 import { HDKComponent, HNode, Prefab } from "@hiber3d/hdk-react";
-
-import { RampedGrid } from "./RampedGrid";
 
 export const RampedGrid: HDKComponent = (props) => (
   <HNode {...props}>
