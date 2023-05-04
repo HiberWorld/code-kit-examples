@@ -14,8 +14,8 @@ export const Containers: HDKComponent = (props) => (
           <Prefab id="en_p_shipping_container_01" s={[1, 0.8, 1]}></Prefab>
         )}
       ></Stack>
-      <Prefab id="trashcontainer_01" p={[0, 0, 10]} />
-      <Prefab id="trashcontainer_01_t1" p={[4, 0, 10]} />
+      <Prefab id="trashcontainer_01" p={[-20, 0, -30]} rotY={70} s={2} />
+      <Prefab id="trashcontainer_01_t1" p={[-16, 0, -24]} rotY={30} s={2} />
       <Stack
         p={[0, 0, 12]}
         dim={4}
@@ -85,7 +85,7 @@ export const Containers: HDKComponent = (props) => (
       <Stack
         p={[0, 0, 24]}
         dim={4}
-        segments={{ length: 6, direction: "UP" }}
+        segments={{ length: 5, direction: "UP" }}
         renderItem={(i) => (
           <Prefab id="en_p_shipping_container_01" s={[1, 0.8, 1]}></Prefab>
         )}
@@ -123,15 +123,17 @@ export const Containers: HDKComponent = (props) => (
     <HNode p={[0, 40, -30]}>
       <Prefab
         id="en_p_garden_gate_01"
-        s={[1, 0.8, 1]}
+        s={[35, 15, 10]}
         rotX={90}
-        p={[0, 0, 0]}
+        p={[32, 30, 40]}
+        material="palette_02_steel"
       ></Prefab>
       <Prefab
         id="en_p_garden_gate_01"
-        s={[1, 0.8, 1]}
+        s={[35, 15, 10]}
         rotX={270}
-        p={[0, 0, 10]}
+        p={[32, 30, 40]}
+        material="palette_02_steel"
       ></Prefab>
     </HNode>
     <HNode
